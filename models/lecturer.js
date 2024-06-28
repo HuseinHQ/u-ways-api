@@ -19,16 +19,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-          isNull: { msg: 'USER_ID_NULL' },
-          notEmpty: { msg: 'USER_ID_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
       MajorId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-          isNull: { msg: 'MAJOR_ID_NULL' },
-          notEmpty: { msg: 'MAJOR_ID_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
     },

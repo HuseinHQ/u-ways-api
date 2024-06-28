@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'FACULTY_NAME_NULL' },
-          notEmpty: { msg: 'FACULTY_NAME_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
     },

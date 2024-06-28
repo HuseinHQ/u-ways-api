@@ -1,5 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
+const { hashPassword } = require('../helpers/bcrypt');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -18,35 +19,35 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'EMAIL_NULL' },
-          notEmpty: { msg: 'EMAIL_EMPTY' },
-          isEmail: { msg: 'NOT_EMAIL_FORMAT' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
+          isEmail: { msg: 'EMAIL' },
         },
       },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'PASSWORD_NULL' },
-          notEmpty: { msg: 'PASSWORD_EMPTY' },
-          len: { args: [8, 255], msg: 'PASSWORD_LENGTH' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
+          len: { args: [8, 255], msg: 'LENGTH' },
         },
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'NAME_NULL' },
-          notEmpty: { msg: 'NAME_EMPTY' },
-          len: { args: [8, 255], msg: 'NAME_LENGTH' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
+          len: { args: [8, 255], msg: 'LENGTH' },
         },
       },
       role: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'ROLE_NULL' },
-          notEmpty: { msg: 'ROLE_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
           isIn: {
             args: [['admin', 'mahasiswa', 'dosen']],
             msg: 'ROLE_INVALID',
@@ -59,6 +60,11 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
+      hooks: {
+        beforeCreate: (user) => {
+          user.password = hashPassword(user.password);
+        },
+      },
       sequelize,
       modelName: 'User',
     }

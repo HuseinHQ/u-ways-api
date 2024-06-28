@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Major.belongsToMany(models.Faculty);
+      Major.belongsTo(models.Faculty);
     }
   }
   Major.init(
@@ -17,16 +17,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-          isNull: { msg: 'FACULTY_ID_NULL' },
-          notEmpty: { msg: 'FACULTY_ID_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isNull: { msg: 'MAJOR_NAME_NULL' },
-          notEmpty: { msg: 'MAJOR_NAME_EMPTY' },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
     },
