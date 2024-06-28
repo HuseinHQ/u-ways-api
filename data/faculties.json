@@ -1,26 +1,26 @@
 [
   {
-    "name": "Ilmu Komputer"
+    "name": "Kedokteran"
   },
   {
-    "name": "Ekonomi dan Bisnis"
-  },
-  {
-    "name": "Pertanian"
+    "name": "Ekonomi & Bisnis"
   },
   {
     "name": "Teknik"
   },
   {
-    "name": "Ilmu Sosial dan Politik"
+    "name": "Ilmu Komputer"
+  },
+  {
+    "name": "Ilmu Sosial & Politik"
   },
   {
     "name": "Arsitektur dan Desain"
   },
   {
-    "name": "Hukum"
+    "name": "Pertanian"
   },
   {
-    "name": "Kedokteran"
+    "name": "Hukum"
   }
 ]

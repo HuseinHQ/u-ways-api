@@ -1,18 +1,126 @@
 [
   {
     "FacultyId": 1,
-    "name": "Informatika"
+    "name": "Pendidikan Dokter"
   },
   {
     "FacultyId": 1,
+    "name": "Profesi Dokter"
+  },
+  {
+    "FacultyId": 2,
+    "name": "Ekonomi Pembangunan"
+  },
+  {
+    "FacultyId": 2,
+    "name": "Manajemen"
+  },
+  {
+    "FacultyId": 2,
+    "name": "Akuntansi"
+  },
+  {
+    "FacultyId": 2,
+    "name": "Kewirausahaan"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknik Industri"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknik Kimia"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknologi Pangan"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknik Sipil"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknik Lingkungan"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Teknik Mesin"
+  },
+  {
+    "FacultyId": 3,
+    "name": "Fisika"
+  },
+  {
+    "FacultyId": 4,
+    "name": "Teknik Informatika"
+  },
+  {
+    "FacultyId": 4,
     "name": "Sistem Informasi"
   },
   {
-    "FacultyId": 1,
+    "FacultyId": 4,
     "name": "Sains Data"
   },
   {
-    "FacultyId": 1,
+    "FacultyId": 4,
     "name": "Bisnis Digital"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Administrasi Negara"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Administrasi Bisnis"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Ilmu Komunikasi"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Hubungan Internasional"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Pariwisata"
+  },
+  {
+    "FacultyId": 5,
+    "name": "Linguistik Indonesia"
+  },
+  {
+    "FacultyId": 5,
+    "name": "D5 - Bahasa Inggris"
+  },
+  {
+    "FacultyId": 6,
+    "name": "Arsitektur"
+  },
+  {
+    "FacultyId": 6,
+    "name": "Desain Komunikasi Visual"
+  },
+  {
+    "FacultyId": 6,
+    "name": "Desain Interios"
+  },
+  {
+    "FacultyId": 6,
+    "name": "Desain Interior"
+  },
+  {
+    "FacultyId": 7,
+    "name": "Agroteknologi"
+  },
+  {
+    "FacultyId": 7,
+    "name": "Agribisnis"
+  },
+  {
+    "FacultyId": 8,
+    "name": "Ilmu Hukum"
   }
 ]

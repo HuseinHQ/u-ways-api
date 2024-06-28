@@ -9,14 +9,14 @@
   {
     "name": "Muhammad Husein Al Hakim",
     "email": "20081010128@student.upnjatim.ac.id",
-    "passowrd": "20081010128@UPNjatim",
+    "password": "20081010128@UPNjatim",
     "role": "mahasiswa",
     "isComplete": true
   },
   {
-    "name": "Agung Mustika Rizky",
+    "name": "Agung Mustika Rizki, S.Kom., M.Kom",
     "email": "agung.mustika.if@upnjatim.ac.id",
-    "passowrd": "agung123",
+    "password": "agung123",
     "role": "dosen",
     "isComplete": true
   }
