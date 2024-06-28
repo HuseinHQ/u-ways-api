@@ -1,8 +1,23 @@
 [
   {
-    "email": "admin@admin.com",
-    "password": "admin123",
+    "name": "Admin 001",
+    "email": "admin001@admin.com",
+    "password": "admin001",
     "role": "admin",
+    "isComplete": true
+  },
+  {
+    "name": "Muhammad Husein Al Hakim",
+    "email": "20081010128@student.upnjatim.ac.id",
+    "passowrd": "20081010128@UPNjatim",
+    "role": "mahasiswa",
+    "isComplete": true
+  },
+  {
+    "name": "Agung Mustika Rizky",
+    "email": "agung.mustika.if@upnjatim.ac.id",
+    "passowrd": "agung123",
+    "role": "dosen",
     "isComplete": true
   }
 ]

@@ -1,0 +1,18 @@
+[
+  {
+    "FacultyId": 1,
+    "name": "Informatika"
+  },
+  {
+    "FacultyId": 1,
+    "name": "Sistem Informasi"
+  },
+  {
+    "FacultyId": 1,
+    "name": "Sains Data"
+  },
+  {
+    "FacultyId": 1,
+    "name": "Bisnis Digital"
+  }
+]

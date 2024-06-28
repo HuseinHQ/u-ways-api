@@ -53,18 +53,21 @@ class UserController {
       const isPasswordValid = comparePassword(password, findUser.password);
       if (!isPasswordValid) throw { name: 'AuthError' };
 
-      const payload = { name: findUser.name, role: findUser.role };
+      const payload = { id: findUser.id, role: findUser.role };
+      const next = findUser.role === 'dosen' && !findUser.isComplete ? true : false;
       const access_token = createToken(payload);
 
-      res.status(fromRegister ? 201 : 200).json({ data: { access_token, ...payload } });
+      res.status(fromRegister ? 201 : 200).json({ data: { access_token, next } });
     } catch (err) {
       console.log('----- controllers/UserController.js (login) -----\n', err);
       next(err);
     }
   }
 
-  static async completeStudentData(req, res, next) {
+  static async completeData(req, res, next) {
     try {
+      const { id, role } = req.user;
+      const {} = req.body;
     } catch (err) {
       next(err);
     }

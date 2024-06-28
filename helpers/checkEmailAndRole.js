@@ -1,6 +1,6 @@
 const checkEmailAndRole = (email) => {
   const studentDomain = '@student.upnjatim.ac.id';
-  const lecturerDomain = '@lecturer.upnjatim.ac.id';
+  const lecturerDomain = '@upnjatim.ac.id';
 
   if (email.endsWith(studentDomain)) {
     return 'mahasiswa';
