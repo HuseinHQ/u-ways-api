@@ -1,7 +1,7 @@
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
 const { createAccessToken, createRefreshToken } = require('../helpers/jwt');
-const { User, Student, Lecturer, sequelize } = require('../models/index');
+const { User, Student, Lecturer, sequelize, Major, Faculty } = require('../models/index');
 
 class UserController {
   static async register(req, res, next) {
@@ -71,7 +71,6 @@ class UserController {
     try {
       const { id: UserId, role } = req.user;
       const { MajorId, LecturerId, semester } = req.body;
-      console.log(role);
 
       const findStudentOrLecturer = await Student.findOne({ where: { UserId } });
       if (findStudentOrLecturer) throw { name: 'DataComplete' };
@@ -95,12 +94,27 @@ class UserController {
     }
   }
 
-  static async getUser(req, res, next) {
+  static async getUserProfile(req, res, next) {
     try {
       const { id } = req.user;
-      const data = await User.findByPk(id);
-      console.log(data);
-    } catch (error) {
+      const findUser = await User.findByPk(id);
+      let findUserDetail;
+      const condition = {
+        where: { UserId: id },
+        include: [
+          {
+            model: Major,
+            include: [{ model: Faculty }],
+          },
+        ],
+      };
+      if (findUser.role === 'mahasiswa') {
+        findUserDetail = await Student.findOne(condition);
+      } else if (findUser.role === 'dosen') {
+        findUserDetail = await Lecturer.findOne(condition);
+      }
+      console.log(findUserDetail.dataValues);
+    } catch (err) {
       console.log('----- controllers/UserController.js (getUser) -----\n', err);
       next(err);
     }
