@@ -1,6 +1,7 @@
 const groupErrors = require('../helpers/groupErrors');
 
 function errorHandler(err, req, res, next) {
+  console.log(err.name);
   let status = 500;
   let errors = { message: 'Internal Server Error' };
 
@@ -33,6 +34,9 @@ function errorHandler(err, req, res, next) {
       status = 503;
       errors = { message: 'Koneksi ke Database Error!' };
       break;
+    case 'TokenExpiredError':
+      status = 401;
+      errors = { message: 'Sesi telah berakhir, silakan login ulang!' };
   }
 
   res.status(status).json({ errors });

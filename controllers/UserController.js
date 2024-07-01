@@ -1,6 +1,6 @@
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
-const { createToken } = require('../helpers/jwt');
+const { createAccessToken, createRefreshToken } = require('../helpers/jwt');
 const { User, Student, Lecturer, sequelize } = require('../models/index');
 
 class UserController {
@@ -54,10 +54,13 @@ class UserController {
       if (!isPasswordValid) throw { name: 'AuthError' };
 
       const payload = { id: findUser.id, role: findUser.role };
-      const next = findUser.role === 'dosen' && !findUser.isComplete ? true : false;
-      const access_token = createToken(payload);
+      const forward = findUser.role === 'dosen' && !findUser.isComplete ? true : false;
+      const access_token = createAccessToken(payload);
+      const refresh_token = createRefreshToken(payload);
 
-      res.status(fromRegister ? 201 : 200).json({ data: { access_token, next } });
+      const getUserReq = { headers: { access_token } };
+      // await this.getUser(getUserReq, res, next);
+      res.status(fromRegister ? 201 : 200).json({ data: { access_token, refresh_token, forward } });
     } catch (err) {
       console.log('----- controllers/UserController.js (login) -----\n', err);
       next(err);
@@ -88,6 +91,17 @@ class UserController {
       res.status(201).json({ data: { message: 'Berhasil melengkapi data!' } });
     } catch (err) {
       console.log('----- controllers/UserController.js (completeData) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async getUser(req, res, next) {
+    try {
+      const { id } = req.user;
+      const data = await User.findByPk(id);
+      console.log(data);
+    } catch (error) {
+      console.log('----- controllers/UserController.js (getUser) -----\n', err);
       next(err);
     }
   }
