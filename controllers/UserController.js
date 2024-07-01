@@ -1,7 +1,7 @@
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
 const { createToken } = require('../helpers/jwt');
-const { User } = require('../models/index');
+const { User, Student, Lecturer, sequelize } = require('../models/index');
 
 class UserController {
   static async register(req, res, next) {
@@ -66,14 +66,31 @@ class UserController {
 
   static async completeData(req, res, next) {
     try {
-      const { id, role } = req.user;
-      const {} = req.body;
+      const { id: UserId, role } = req.user;
+      const { MajorId, LecturerId, semester } = req.body;
+      console.log(role);
+
+      const findStudentOrLecturer = await Student.findOne({ where: { UserId } });
+      if (findStudentOrLecturer) throw { name: 'DataComplete' };
+
+      if (role === 'mahasiswa') {
+        await sequelize.transaction(async (t) => {
+          const data = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
+          await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
+        });
+      } else {
+        await sequelize.transaction(async (t) => {
+          await Lecturer.create({ UserId, MajorId }, { transaction: t });
+          await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
+        });
+      }
+
+      res.status(201).json({ data: { message: 'Berhasil melengkapi data!' } });
     } catch (err) {
+      console.log('----- controllers/UserController.js (completeData) -----\n', err);
       next(err);
     }
   }
-
-  static async completeLecturerData(req, res, next) {}
 }
 
 module.exports = UserController;

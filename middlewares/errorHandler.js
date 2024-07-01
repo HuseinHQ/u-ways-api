@@ -17,10 +17,22 @@ function errorHandler(err, req, res, next) {
       status = 409;
       errors = groupErrors(err);
       break;
-    case 'AuthError': {
+    case 'AuthError':
       status = 401;
-      errors = { message: 'Invalid Email or Password' };
-    }
+      errors = { message: 'Email atau Password salah!' };
+      break;
+    case 'DataComplete':
+      status = 401;
+      errors = { message: 'Data sudah lengkap!' };
+      break;
+    case 'SequelizeForeignKeyConstraintError':
+      status = 400;
+      errors = { code: err.index };
+      break;
+    case 'SequelizeConnectionRefusedError':
+      status = 503;
+      errors = { message: 'Koneksi ke Database Error!' };
+      break;
   }
 
   res.status(status).json({ errors });
