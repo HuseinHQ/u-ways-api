@@ -1,6 +1,6 @@
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
-const { createAccessToken, createRefreshToken } = require('../helpers/jwt');
+const { createAccessToken, createRefreshToken, verifyToken } = require('../helpers/jwt');
 const { User, Student, Lecturer, sequelize, Major, Faculty } = require('../models/index');
 
 class UserController {
@@ -106,6 +106,10 @@ class UserController {
             model: Major,
             include: [{ model: Faculty }],
           },
+          {
+            model: Lecturer,
+            include: [{ model: User }],
+          },
         ],
       };
       if (findUser.role === 'mahasiswa') {
@@ -113,9 +117,38 @@ class UserController {
       } else if (findUser.role === 'dosen') {
         findUserDetail = await Lecturer.findOne(condition);
       }
+
       console.log(findUserDetail.dataValues);
+      res.json({
+        data: {
+          email: findUser.email,
+          name: findUser.name,
+          role: findUser.role,
+          is_bio_complete: findUser.isComplete,
+          major_id: findUserDetail.MajorId,
+          major_name: findUserDetail.Major.name,
+          faculty_id: findUserDetail.Major.FacultyId,
+          faculty_name: findUserDetail.Major.Faculty.name,
+          // Data Khusus Mahasiswa
+          semester: findUserDetail.semester,
+          lecturer_id: findUserDetail.LecturerId,
+          lecturer_name: findUserDetail.Lecturer.User.name,
+        },
+      });
     } catch (err) {
       console.log('----- controllers/UserController.js (getUser) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async refreshToken(req, res, next) {
+    try {
+      const { refresh_token: old_access_token } = req.headers;
+      const payload = verifyToken(old_access_token);
+      const access_token = createAccessToken(payload);
+      const refresh_token = createAccessToken(payload);
+      res.json({ data: { access_token, refresh_token } });
+    } catch (err) {
       next(err);
     }
   }

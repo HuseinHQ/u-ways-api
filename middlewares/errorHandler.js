@@ -37,6 +37,11 @@ function errorHandler(err, req, res, next) {
     case 'TokenExpiredError':
       status = 401;
       errors = { message: 'Sesi telah berakhir, silakan login ulang!' };
+      break;
+    case 'JsonWebTokenError':
+      status = 401;
+      errors = { message: 'Invalid Token!' };
+      break;
   }
 
   res.status(status).json({ errors });
