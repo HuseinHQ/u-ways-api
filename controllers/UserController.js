@@ -118,7 +118,6 @@ class UserController {
         findUserDetail = await Lecturer.findOne(condition);
       }
 
-      console.log(findUserDetail.dataValues);
       res.json({
         data: {
           email: findUser.email,
