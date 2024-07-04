@@ -3,7 +3,7 @@ const { Major } = require('../models/index');
 class MajorController {
   static async getAllMajors(req, res, next) {
     const where = {};
-    const { FacultyId } = req.params;
+    const { FacultyId } = req.query;
     if (FacultyId) {
       where.FacultyId = FacultyId;
     }
@@ -17,6 +17,7 @@ class MajorController {
     res.json({ data });
     try {
     } catch (err) {
+      console.log('----- controllers/MajorController.js (getAllMajors) -----\n', err);
       next(err);
     }
   }

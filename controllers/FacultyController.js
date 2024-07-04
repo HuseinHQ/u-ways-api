@@ -8,12 +8,13 @@ class FacultyController {
         id: el.id,
         name: el.name,
         Majors: el.Majors.map((major) => ({
-          MajorId: major.id,
+          id: major.id,
           name: major.name,
         })),
       }));
       res.json({ data });
     } catch (err) {
+      console.log('----- controllers/FacultyController.js (getAllFaculties) -----\n', err);
       next(err);
     }
   }

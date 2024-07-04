@@ -145,9 +145,10 @@ class UserController {
       const { refresh_token: old_access_token } = req.headers;
       const payload = verifyToken(old_access_token);
       const access_token = createAccessToken(payload);
-      const refresh_token = createAccessToken(payload);
+      const refresh_token = createRefreshToken(payload);
       res.json({ data: { access_token, refresh_token } });
     } catch (err) {
+      console.log('----- controllers/UserController.js (refreshToken) -----\n', err);
       next(err);
     }
   }

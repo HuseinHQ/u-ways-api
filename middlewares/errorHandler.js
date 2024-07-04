@@ -1,7 +1,6 @@
 const groupErrors = require('../helpers/groupErrors');
 
 function errorHandler(err, req, res, next) {
-  console.log(err.name);
   let status = 500;
   let errors = { message: 'Internal Server Error' };
 

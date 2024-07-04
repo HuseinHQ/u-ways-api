@@ -10,7 +10,6 @@ function authentication(req, res, next) {
     } catch (error) {
       if (error.name === 'TokenExpiredError') {
         const refreshPayload = verifyToken(refresh_token);
-        console.log(refreshPayload, '<<<<<<<<<<<<<<<');
         payload = { id: refreshPayload.id, role: refreshPayload.role };
         const newAccessToken = createAccessToken(payload);
         const newRefreshToken = createRefreshToken(payload);
