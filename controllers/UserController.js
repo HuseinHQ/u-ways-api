@@ -152,6 +152,25 @@ class UserController {
       next(err);
     }
   }
+
+  static async updateProfile(req, res, next) {
+    try {
+      const { name, semester, MajorId, LecturerId } = req.body;
+      const { id, role } = req.user;
+
+      if (role === 'mahasiswa') {
+        await sequelize.transaction(async (t) => {
+          await User.update({ name }, { where: { id } }, { transaction: t });
+          await Student.update({ MajorId, LecturerId, semester }, { where: { UserId: id } }, { transaction: t });
+        });
+      }
+
+      res.json({ data: { message: 'Berhasil memperbarui profil!' } });
+    } catch (err) {
+      console.log('----- controllers/UserController.js (updateProfile) -----\n', err);
+      next(err);
+    }
+  }
 }
 
 module.exports = UserController;
