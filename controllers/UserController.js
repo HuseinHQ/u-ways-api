@@ -22,7 +22,7 @@ class UserController {
         throw {
           name: 'ValidationError',
           errors: {
-            email: ['NOT_UPN'],
+            email: ['INVALID'],
           },
         };
       }
@@ -55,12 +55,11 @@ class UserController {
 
       const payload = { id: findUser.id, role: findUser.role };
       const forward = findUser.role === 'dosen' && !findUser.isComplete ? true : false;
+      const isBioComplete = findUser.isComplete;
       const access_token = createAccessToken(payload);
       const refresh_token = createRefreshToken(payload);
 
-      const getUserReq = { headers: { access_token } };
-      // await this.getUser(getUserReq, res, next);
-      res.status(fromRegister ? 201 : 200).json({ data: { access_token, refresh_token, forward } });
+      res.status(fromRegister ? 201 : 200).json({ data: { access_token, refresh_token, isBioComplete, forward } });
     } catch (err) {
       console.log('----- controllers/UserController.js (login) -----\n', err);
       next(err);

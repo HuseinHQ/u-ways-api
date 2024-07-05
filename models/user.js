@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: { msg: 'EMPTY' },
           isIn: {
             args: [['admin', 'mahasiswa', 'dosen']],
-            msg: 'ROLE_INVALID',
+            msg: 'INVALID',
           },
         },
       },
