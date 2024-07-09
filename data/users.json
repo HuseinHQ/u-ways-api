@@ -19,5 +19,12 @@
     "password": "agung123",
     "role": "dosen",
     "isComplete": true
+  },
+  {
+    "name": "A",
+    "email": "a@student.upnjatim.ac.id",
+    "password": "a",
+    "role": "mahasiswa",
+    "isComplete": false
   }
 ]
