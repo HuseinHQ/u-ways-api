@@ -1,7 +1,8 @@
+const db = require('../config/firestoreDatabase');
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
 const { createAccessToken, createRefreshToken, verifyToken } = require('../helpers/jwt');
-const { User, Student, Lecturer, sequelize, Major, Faculty } = require('../models/index');
+const { User, Student, Lecturer, sequelize, Major, Faculty, Chat } = require('../models/index');
 
 class UserController {
   static async register(req, res, next) {
@@ -75,9 +76,19 @@ class UserController {
       if (findStudentOrLecturer) throw { name: 'DataComplete' };
 
       if (role === 'mahasiswa') {
+        let newStudent;
+        let newChat;
         await sequelize.transaction(async (t) => {
-          const data = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
+          newStudent = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
           await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
+          newChat = await Chat.create({ StudentId: data.id, LecturerId }, { transaction: t });
+        });
+
+        // creating new chat document in firestore
+        const chatsRef = db.collection('chats').doc(`chat-${newChat.id.toString()}`);
+        await chatsRef.set({
+          createdAt: newChat.createdAt,
+          participants: [newStudent.id, LecturerId],
         });
       } else {
         await sequelize.transaction(async (t) => {

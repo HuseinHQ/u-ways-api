@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       Student.belongsTo(models.Lecturer);
       Student.belongsTo(models.Major);
       Student.belongsTo(models.User);
+      Student.hasOne(models.Chat);
     }
   }
   Student.init(
