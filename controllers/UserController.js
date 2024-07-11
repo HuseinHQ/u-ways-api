@@ -72,23 +72,27 @@ class UserController {
       const { id: UserId, role } = req.user;
       const { MajorId, LecturerId, semester } = req.body;
 
-      const findStudentOrLecturer = await Student.findOne({ where: { UserId } });
-      if (findStudentOrLecturer) throw { name: 'DataComplete' };
+      const findUser = await User.findByPk(UserId);
+      if (findUser.isComplete) throw { name: 'DataComplete' };
+
+      let findLecturer;
+      if (role === 'mahasiswa') {
+        findLecturer = await Lecturer.findByPk(LecturerId, { include: [User] });
+      }
 
       if (role === 'mahasiswa') {
-        let newStudent;
-        let newChat;
         await sequelize.transaction(async (t) => {
-          newStudent = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
+          const newStudent = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
           await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
-          newChat = await Chat.create({ StudentId: data.id, LecturerId }, { transaction: t });
-        });
+          const newChat = await Chat.create({ StudentId: newStudent.id, LecturerId }, { transaction: t });
 
-        // creating new chat document in firestore
-        const chatsRef = db.collection('chats').doc(`chat-${newChat.id.toString()}`);
-        await chatsRef.set({
-          createdAt: newChat.createdAt,
-          participants: [newStudent.id, LecturerId],
+          // creating new chat document in firestore
+          const chatsRef = db.collection('chats').doc(`chat-${newChat.id.toString()}`);
+          await chatsRef.set({
+            createdAt: newChat.createdAt,
+            updatedAt: newChat.updatedAt,
+            participants: [findUser.email, findLecturer.User.email],
+          });
         });
       } else {
         await sequelize.transaction(async (t) => {
@@ -116,13 +120,13 @@ class UserController {
             model: Major,
             include: [{ model: Faculty }],
           },
-          {
-            model: Lecturer,
-            include: [{ model: User }],
-          },
         ],
       };
       if (findUser.role === 'mahasiswa') {
+        condition.include.push({
+          model: Lecturer,
+          include: [{ model: User }],
+        });
         findUserDetail = await Student.findOne(condition);
       } else if (findUser.role === 'dosen') {
         findUserDetail = await Lecturer.findOne(condition);
@@ -139,9 +143,9 @@ class UserController {
           faculty_id: findUserDetail.Major.FacultyId,
           faculty_name: findUserDetail.Major.Faculty.name,
           // Data Khusus Mahasiswa
-          semester: findUserDetail.semester,
-          lecturer_id: findUserDetail.LecturerId,
-          lecturer_name: findUserDetail.Lecturer.User.name,
+          semester: findUserDetail?.semester,
+          lecturer_id: findUserDetail?.LecturerId,
+          lecturer_name: findUserDetail?.Lecturer?.User?.name,
         },
       });
     } catch (err) {

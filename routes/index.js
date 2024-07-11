@@ -5,6 +5,7 @@ const facultyRouter = require('./facultyRouter');
 const majorRouter = require('./majorRouter');
 const lecturerRouter = require('./lecturerRouter');
 const articleRouter = require('./articleRouter');
+const chatRouter = require('./chatRouter');
 const router = express.Router();
 
 router.use('/auth', authRouter);
@@ -13,5 +14,6 @@ router.use('/faculties', facultyRouter);
 router.use('/majors', majorRouter);
 router.use('/lecturers', lecturerRouter);
 router.use('/articles', articleRouter);
+router.use('/chats', chatRouter);
 
 module.exports = router;
