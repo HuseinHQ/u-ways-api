@@ -1,4 +1,4 @@
-const { Chat, Lecturer, Student, User } = require('../models/index');
+const { Chat, Lecturer, Student, User, Sequelize, sequelize } = require('../models/index');
 
 class ChatController {
   static async getChats(req, res, next) {
@@ -40,8 +40,11 @@ class ChatController {
     try {
       const { id } = req.params;
       const { date } = req.body;
-      await Chat.update({ updatedAt: date }, { where: { id } });
-      res.status(204).json({ data: { message: 'Update ChatDate Berhasil' } });
+      await sequelize.query(`UPDATE "Chats" SET "updatedAt" = :date WHERE "id" = :id`, {
+        replacements: { date, id },
+        type: Sequelize.QueryTypes.UPDATE,
+      });
+      res.json({ data: { message: 'Update ChatDate Berhasil' } });
     } catch (err) {
       console.log('----- controllers/ChatController.js (updateChatDate) -----\n', err);
       next(err);

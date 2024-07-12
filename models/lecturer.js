@@ -32,6 +32,14 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: { msg: 'EMPTY' },
         },
       },
+      nip: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
+        },
+      },
     },
     {
       sequelize,

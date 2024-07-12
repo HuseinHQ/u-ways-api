@@ -1,6 +1,7 @@
 [
   {
     "UserId": 3,
-    "MajorId": 14
+    "MajorId": 14,
+    "nip": "12345678"
   }
 ]

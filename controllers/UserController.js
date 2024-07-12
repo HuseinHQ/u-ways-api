@@ -55,12 +55,12 @@ class UserController {
       if (!isPasswordValid) throw { name: 'AuthError' };
 
       const payload = { id: findUser.id, role: findUser.role };
-      const forward = findUser.role === 'dosen' && !findUser.isComplete ? true : false;
       const isBioComplete = findUser.isComplete;
       const access_token = createAccessToken(payload);
       const refresh_token = createRefreshToken(payload);
+      const role = findUser.role;
 
-      res.status(fromRegister ? 201 : 200).json({ data: { access_token, refresh_token, isBioComplete, forward } });
+      res.status(fromRegister ? 201 : 200).json({ data: { access_token, refresh_token, isBioComplete, role } });
     } catch (err) {
       console.log('----- controllers/UserController.js (login) -----\n', err);
       next(err);
@@ -70,7 +70,7 @@ class UserController {
   static async completeData(req, res, next) {
     try {
       const { id: UserId, role } = req.user;
-      const { MajorId, LecturerId, semester } = req.body;
+      const { MajorId, LecturerId, semester, nip } = req.body;
 
       const findUser = await User.findByPk(UserId);
       if (findUser.isComplete) throw { name: 'DataComplete' };
@@ -96,7 +96,7 @@ class UserController {
         });
       } else {
         await sequelize.transaction(async (t) => {
-          await Lecturer.create({ UserId, MajorId }, { transaction: t });
+          await Lecturer.create({ UserId, MajorId, nip }, { transaction: t });
           await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
         });
       }
@@ -146,6 +146,8 @@ class UserController {
           semester: findUserDetail?.semester,
           lecturer_id: findUserDetail?.LecturerId,
           lecturer_name: findUserDetail?.Lecturer?.User?.name,
+          // Data Khusus Dosen
+          nip: findUserDetail?.nip,
         },
       });
     } catch (err) {
@@ -169,13 +171,18 @@ class UserController {
 
   static async updateProfile(req, res, next) {
     try {
-      const { name, semester, MajorId, LecturerId } = req.body;
+      const { name, semester, MajorId, LecturerId, nip } = req.body;
       const { id, role } = req.user;
 
       if (role === 'mahasiswa') {
         await sequelize.transaction(async (t) => {
           await User.update({ name }, { where: { id } }, { transaction: t });
           await Student.update({ MajorId, LecturerId, semester }, { where: { UserId: id } }, { transaction: t });
+        });
+      } else {
+        await sequelize.transaction(async (t) => {
+          await User.update({ name }, { where: { id } }, { transaction: t });
+          await Lecturer.update({ MajorId, nip }, { where: { UserId: id } }, { transaction: t });
         });
       }
 

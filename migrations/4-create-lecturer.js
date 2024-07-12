@@ -23,6 +23,9 @@ module.exports = {
           key: 'id',
         },
       },
+      nip: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('NOW()'),
