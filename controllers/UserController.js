@@ -81,8 +81,15 @@ class UserController {
       }
 
       if (role === 'mahasiswa') {
+        const npm = findUser.email.split('@')[0];
+        const firstTwoDigits = npm.substring(0, 2);
+        const cohort = '20' + firstTwoDigits;
+
         await sequelize.transaction(async (t) => {
-          const newStudent = await Student.create({ UserId, MajorId, LecturerId, semester }, { transaction: t });
+          const newStudent = await Student.create(
+            { UserId, MajorId, LecturerId, semester, npm, cohort },
+            { transaction: t }
+          );
           await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
           const newChat = await Chat.create({ StudentId: newStudent.id, LecturerId }, { transaction: t });
 

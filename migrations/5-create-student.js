@@ -33,6 +33,12 @@ module.exports = {
       semester: {
         type: Sequelize.INTEGER,
       },
+      npm: {
+        type: Sequelize.STRING,
+      },
+      cohort: {
+        type: Sequelize.INTEGER,
+      },
       createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('NOW()'),

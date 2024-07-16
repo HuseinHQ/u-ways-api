@@ -56,6 +56,21 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      npm: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
+        },
+      },
+      cohort: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'NULL' },
+        },
+      },
     },
     {
       sequelize,

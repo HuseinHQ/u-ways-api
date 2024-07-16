@@ -3,6 +3,8 @@
     "UserId": 2,
     "MajorId": 14,
     "LecturerId": 1,
-    "semester": 8
+    "semester": 8,
+    "npm": "20081010128",
+    "cohort": 2020
   }
 ]
