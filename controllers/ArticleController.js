@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const { Article } = require('../models/index');
 
 class ArticleController {
@@ -39,6 +40,23 @@ class ArticleController {
       res.json({ data: article });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (getArticleDetails) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async editArticle(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { title, abstract, description } = req.body;
+      const findArticle = await Article.findByPk(id);
+      if (!findArticle) {
+        throw { name: 'ArticleNotFound', data: id };
+      }
+
+      await Article.update({ title, abstract, description }, { where: { id } });
+      res.json({ data: { message: 'Berhasil mengubah artikel!' } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (editArticle) -----\n', err);
       next(err);
     }
   }

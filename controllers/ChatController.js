@@ -17,8 +17,9 @@ class ChatController {
           { model: Lecturer, include: [User] },
           { model: Student, include: [User] },
         ],
-        orderBy: [['updatedAt', 'DESC']],
+        order: [['updatedAt', 'DESC']],
       });
+      console.log(chats);
       chats = chats.map((el) => ({
         chatId: `chat-${el.id}`,
         updatedAt: el.updatedAt,

@@ -41,6 +41,12 @@ function errorHandler(err, req, res, next) {
       status = 401;
       errors = { message: 'Invalid Token!' };
       break;
+    case 'Authorization':
+      status = 402;
+      errors = { message: 'Hanya admin yang boleh update artikel!' };
+    case 'ArticleNotFound':
+      status = 404;
+      errors = { message: `Artikel dengan id ${err.data} tidak ditemukan` };
   }
 
   res.status(status).json({ errors });

@@ -34,13 +34,13 @@ class StudentController {
 
       const response = {
         data: students.map((student) => ({
-          id: student.id,
+          id: student.User.id, // user id
           name: student.User.name,
           npm: student.npm,
         })),
         pagination: {
           cohortList,
-          cohort: cohort || defaultCohort,
+          cohort: +cohort || defaultCohort,
         },
       };
 

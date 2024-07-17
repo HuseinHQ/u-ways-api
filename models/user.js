@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.hasOne(models.Student);
       User.hasOne(models.Lecturer);
+      User.hasMany(models.Quiz);
     }
   }
   User.init(

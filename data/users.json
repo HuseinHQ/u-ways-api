@@ -21,10 +21,31 @@
     "isComplete": true
   },
   {
-    "name": "A",
-    "email": "a@student.upnjatim.ac.id",
-    "password": "a",
+    "name": "Kaisar Fauzan",
+    "email": "20081010129@student.upnjatim.ac.id",
+    "password": "kaisar123",
     "role": "mahasiswa",
-    "isComplete": false
+    "isComplete": true
+  },
+  {
+    "name": "Mohammad Firmansyah",
+    "email": "20081010130@student.upnjatim.ac.id",
+    "password": "firman123",
+    "role": "mahasiswa",
+    "isComplete": true
+  },
+  {
+    "name": "Farrel Tiuraka",
+    "email": "21081010128@student.upnjatim.ac.id",
+    "password": "farrel123",
+    "role": "mahasiswa",
+    "isComplete": true
+  },
+  {
+    "name": "Lintang Sari",
+    "email": "21081010129@student.upnjatim.ac.id",
+    "password": "litang123",
+    "role": "mahasiswa",
+    "isComplete": true
   }
 ]

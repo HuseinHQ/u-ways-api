@@ -2,5 +2,21 @@
   {
     "StudentId": 1,
     "LecturerId": 1
+  },
+  {
+    "StudentId": 2,
+    "LecturerId": 1
+  },
+  {
+    "StudentId": 3,
+    "LecturerId": 1
+  },
+  {
+    "StudentId": 4,
+    "LecturerId": 1
+  },
+  {
+    "StudentId": 5,
+    "LecturerId": 1
   }
 ]
