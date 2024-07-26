@@ -44,9 +44,21 @@ function errorHandler(err, req, res, next) {
     case 'Authorization':
       status = 402;
       errors = { message: 'Hanya admin yang boleh update artikel!' };
+      break;
     case 'ArticleNotFound':
       status = 404;
-      errors = { message: `Artikel dengan id ${err.data} tidak ditemukan` };
+      errors = { message: `Artikel dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'NoImageUpload':
+      status = 400;
+      errors = { message: 'Tidak ada gambar untuk diupload!' };
+      break;
+    case 'CloudinaryError':
+      status = 500;
+      errors = { message: 'Terjadi masalah pada Cloudinary!' };
+    case 'QuestionNotFound':
+      status = 404;
+      errors = { message: `Question dengan id ${err.data} tidak ditemukan!` };
   }
 
   res.status(status).json({ errors });

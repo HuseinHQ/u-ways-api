@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       score: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         defaultValue: 0,
         validate: {
           min: {

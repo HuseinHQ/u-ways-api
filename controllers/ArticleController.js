@@ -1,5 +1,5 @@
-const { where } = require('sequelize');
 const { Article } = require('../models/index');
+const cloudinary = require('../config/cloudinaryConfig');
 
 class ArticleController {
   static async getArticles(req, res, next) {
@@ -57,6 +57,43 @@ class ArticleController {
       res.json({ data: { message: 'Berhasil mengubah artikel!' } });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (editArticle) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async createArticle(req, res, next) {
+    try {
+      const { title, abstract, description } = req.body;
+      await Article.create({ title, abstract, description });
+
+      res.json({ data: { message: 'Berhasil menambah artikel!' } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (createArticle) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async postArticleImage(req, res, next) {
+    try {
+      const { id } = req.params;
+      const findArticle = await Article.findByPk(id);
+      if (!findArticle) {
+        throw { name: 'ArticleNotFound' };
+      }
+
+      const { image } = req.files;
+      if (!image) {
+        throw { name: 'NoImageUpload' };
+      }
+
+      const { secure_url } = await cloudinary.uploader.upload(image.tempFilePath).catch((error) => {
+        throw { name: 'CloudinaryError' };
+      });
+
+      await Article.update({ imageUrl: secure_url }, { where: { id } });
+      res.status(201).json({ data: { message: 'Gambar berhasil diunggah!' } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (postArticleImage) -----\n', err);
       next(err);
     }
   }
