@@ -1,11 +1,14 @@
-const { Major } = require('../models/index');
+const { Major, Sequelize } = require('../models/index');
 
 class MajorController {
   static async getAllMajors(req, res, next) {
     const where = {};
-    const { FacultyId } = req.query;
+    const { FacultyId, search } = req.query;
     if (FacultyId) {
       where.FacultyId = FacultyId;
+    }
+    if (search) {
+      where.name = { [Sequelize.Op.iLike]: `%${search}%` };
     }
 
     let data = await Major.findAll({ where });

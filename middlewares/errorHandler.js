@@ -43,7 +43,7 @@ function errorHandler(err, req, res, next) {
       break;
     case 'Authorization':
       status = 402;
-      errors = { message: 'Hanya admin yang boleh update artikel!' };
+      errors = { message: 'Anda tidak memiliki akses ke halaman ini!' };
       break;
     case 'ArticleNotFound':
       status = 404;

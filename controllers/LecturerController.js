@@ -1,13 +1,23 @@
-const { Lecturer, User, Major, Faculty } = require('../models/index');
+const { Lecturer, User, Major, Faculty, Sequelize } = require('../models/index');
 
 class LecturerController {
   static async getAllLecturers(req, res, next) {
     try {
-      const { FacultyId } = req.query;
-      console.log('FacultyId', FacultyId);
+      const { FacultyId, search } = req.query;
+
+      const where = {};
+      if (search) {
+        where[Sequelize.Op.or] = [
+          { name: { [Sequelize.Op.iLike]: `%${search}%` } },
+          { email: { [Sequelize.Op.iLike]: `%${search}%` } },
+        ];
+      }
+
       const include = [
         {
           model: User,
+          required: true,
+          where,
         },
       ];
 
@@ -28,6 +38,7 @@ class LecturerController {
       data = data.map((el) => ({
         id: el.id,
         name: el.User.name,
+        email: el.User.email,
       }));
       res.json({ data });
     } catch (err) {

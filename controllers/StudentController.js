@@ -1,9 +1,9 @@
-const { Lecturer, Student, User, sequelize } = require('../models/index');
+const { Lecturer, Student, User, sequelize, Sequelize } = require('../models/index');
 
 class StudentController {
-  static async getAllStudents(req, res, next) {
+  static async getAllStudentsByCohort(req, res, next) {
     try {
-      const { cohort } = req.query;
+      const { cohort, search } = req.query;
       const where = {};
 
       const { role, id } = req.user;
@@ -45,6 +45,38 @@ class StudentController {
       };
 
       res.json(response);
+    } catch (err) {
+      console.log('----- controllers/StudentController.js (getAllStudentsByCohort) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async getAllStudents(req, res, next) {
+    try {
+      const { search } = req.query;
+      const where = {};
+      if (search) {
+        where[Sequelize.Op.or] = [
+          { name: { [Sequelize.Op.iLike]: `%${search}%` } },
+          { email: { [Sequelize.Op.iLike]: `%${search}%` } },
+        ];
+      }
+
+      const students = await Student.findAll({
+        include: {
+          model: User,
+          required: true,
+          where,
+        },
+      });
+
+      const response = students.map((student) => ({
+        id: student.id,
+        name: student.User.name,
+        email: student.User.email,
+      }));
+
+      res.json({ data: response });
     } catch (err) {
       console.log('----- controllers/StudentController.js (getAllStudents) -----\n', err);
       next(err);

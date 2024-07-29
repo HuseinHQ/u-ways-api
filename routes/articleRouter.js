@@ -1,4 +1,3 @@
-const router = require('.');
 const ArticleController = require('../controllers/ArticleController');
 const adminOnly = require('../middlewares/adminOnly');
 const authentication = require('../middlewares/authentication');
