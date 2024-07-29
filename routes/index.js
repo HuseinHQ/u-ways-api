@@ -9,6 +9,7 @@ const chatRouter = require('./chatRouter');
 const studentRouter = require('./studentRouter');
 const quizRouter = require('./quizRouter');
 const questionRouter = require('./questionRouter');
+const adminRouter = require('./adminRouter');
 const router = express.Router();
 
 router.use('/auth', authRouter);
@@ -21,5 +22,6 @@ router.use('/articles', articleRouter);
 router.use('/chats', chatRouter);
 router.use('/quizzes', quizRouter);
 router.use('/questions', questionRouter);
+router.use('/admin', adminRouter);
 
 module.exports = router;
