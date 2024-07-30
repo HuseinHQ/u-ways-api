@@ -56,9 +56,14 @@ function errorHandler(err, req, res, next) {
     case 'CloudinaryError':
       status = 500;
       errors = { message: 'Terjadi masalah pada Cloudinary!' };
+      break;
     case 'QuestionNotFound':
       status = 404;
       errors = { message: `Question dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'FacultyNotFound':
+      status = 404;
+      errors = { message: `Fakultas dengan id ${err.data} tidak ditemukan!` };
   }
 
   res.status(status).json({ errors });
