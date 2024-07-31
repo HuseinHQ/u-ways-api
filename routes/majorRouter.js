@@ -11,5 +11,6 @@ majorRouter.use(adminOnly);
 majorRouter.post('/', MajorController.addMajor);
 majorRouter.delete('/', MajorController.bulkDeleteMajor);
 majorRouter.put('/:id', MajorController.editMajor);
+majorRouter.delete('/:id', MajorController.deleteMajor);
 
 module.exports = majorRouter;

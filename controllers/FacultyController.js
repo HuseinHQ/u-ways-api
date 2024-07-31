@@ -9,7 +9,7 @@ class FacultyController {
         where.name = { [Sequelize.Op.iLike]: `%${search}%` };
       }
 
-      let data = await Faculty.findAll({ where, include: [Major] });
+      let data = await Faculty.findAll({ where, include: [Major], order: [['name', 'ASC']] });
       data = data.map((el) => ({
         id: el.id,
         name: el.name,
@@ -69,6 +69,23 @@ class FacultyController {
       res.json({ data: { message: `Fakultas dengan id ${id} berhasil diubah!` } });
     } catch (err) {
       console.log('----- controllers/FacultyController.js (editFaculty) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async deleteFaculty(req, res, next) {
+    try {
+      const { id } = req.params;
+      const findFaculty = await Faculty.findByPk(id);
+      if (!findFaculty) {
+        throw { name: 'FacultyNotFound' };
+      }
+
+      await Faculty.destroy({ where: { id } });
+
+      res.json({ data: { message: `Fakultas ${findFaculty.name} berhasil didelete!` } });
+    } catch (err) {
+      console.log('----- controllers/FacultyController.js (deleteFaculty) -----\n', err);
       next(err);
     }
   }

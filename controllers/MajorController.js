@@ -11,7 +11,7 @@ class MajorController {
       where.name = { [Sequelize.Op.iLike]: `%${search}%` };
     }
 
-    let data = await Major.findAll({ where });
+    let data = await Major.findAll({ where, order: [['name', 'ASC']] });
     data = data.map((el) => ({
       id: el.id,
       FacultyId: el.FacultyId,
@@ -69,6 +69,23 @@ class MajorController {
       res.json({ data: { message: `Program studi dengan id ${id} berhasil diubah!` } });
     } catch (err) {
       console.log('----- controllers/MajorController.js (editMajor) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async deleteMajor(req, res, next) {
+    try {
+      const { id } = req.params;
+      const findMajor = await Major.findByPk(id);
+      if (!findMajor) {
+        throw { name: 'MajorNotFound' };
+      }
+
+      await Major.destroy({ where: { id } });
+
+      res.json({ data: { message: `Program studi ${findMajor.name} berhasil didelete!` } });
+    } catch (err) {
+      console.log('----- controllers/MajorController.js (deleteMajor) -----\n', err);
       next(err);
     }
   }

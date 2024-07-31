@@ -15,6 +15,9 @@ module.exports = {
           model: 'Faculties',
           key: 'id',
         },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,

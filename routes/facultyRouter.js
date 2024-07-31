@@ -11,5 +11,6 @@ facultyRouter.use(adminOnly);
 facultyRouter.post('/', FacultyController.addFaculty);
 facultyRouter.delete('/', FacultyController.bulkDeleteFaculty);
 facultyRouter.put('/:id', FacultyController.editFaculty);
+facultyRouter.delete('/:id', FacultyController.deleteFaculty);
 
 module.exports = facultyRouter;
