@@ -64,6 +64,15 @@ function errorHandler(err, req, res, next) {
     case 'FacultyNotFound':
       status = 404;
       errors = { message: `Fakultas dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'LecturerNotFound':
+      status = 404;
+      errors = { message: `Dosen dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'UserNotFound':
+      status = 404;
+      errors = { message: `User dengan id ${err.data} tidak ditemukan!` };
+      break;
   }
 
   res.status(status).json({ errors });

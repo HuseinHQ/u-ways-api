@@ -1,4 +1,4 @@
-const { Lecturer, User, Major, Faculty, Sequelize } = require('../models/index');
+const { Lecturer, User, Major, Faculty, Sequelize, sequelize } = require('../models/index');
 
 class LecturerController {
   static async getAllLecturers(req, res, next) {
@@ -43,6 +43,30 @@ class LecturerController {
       res.json({ data });
     } catch (err) {
       console.log('----- controllers/LecturerController.js (getAllLecturers) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async deleteLecturer(req, res, next) {
+    try {
+      const { id } = req.params;
+      const findLecturer = await Lecturer.findByPk(id);
+      if (!findLecturer) {
+        throw { name: 'LecturerNotFound', data: id };
+      }
+      const findUser = await User.findByPk(findLecturer.UserId);
+      if (!findUser) {
+        throw { name: 'UserNotFound', data: id };
+      }
+
+      await sequelize.transaction(async (transaction) => {
+        await Lecturer.destroy({ where: { id } }, { transaction });
+        await User.destroy({ where: { id: findUser.id } }, { transaction });
+      });
+
+      res.json({ message: `Dosen dengan id ${id} berhasil dihapus!` });
+    } catch (err) {
+      console.log('----- controllers/LecturerController.js (deleteLecturer) -----\n', err);
       next(err);
     }
   }
