@@ -10,18 +10,22 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Student.belongsTo(models.Lecturer);
       Student.belongsTo(models.Major);
-      Student.belongsTo(models.User);
+      Student.belongsTo(models.User, {
+        foreignKey: 'id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      });
       Student.hasOne(models.Chat);
     }
   }
   Student.init(
     {
-      UserId: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
         },
       },
       MajorId: {
@@ -29,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
         },
       },
       LecturerId: {
@@ -37,7 +40,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
         },
       },
       semester: {
@@ -45,7 +47,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
           min: {
             args: [1],
             msg: 'MIN',

@@ -6,6 +6,11 @@ const lecturerRouter = require('express').Router();
 
 lecturerRouter.use(authentication);
 lecturerRouter.get('/', LecturerController.getAllLecturers);
-lecturerRouter.delete('/:id', adminOnly, LecturerController.deleteLecturer);
+lecturerRouter.get('/:id', LecturerController.getLecturer);
+
+lecturerRouter.use(adminOnly);
+lecturerRouter.delete('/', LecturerController.bulkDeleteLecturer);
+lecturerRouter.put('/:id', LecturerController.editLecturer);
+lecturerRouter.delete('/:id', LecturerController.deleteLecturer);
 
 module.exports = lecturerRouter;

@@ -1,40 +1,40 @@
 [
   {
-    "UserId": 2,
+    "id": 2,
     "MajorId": 14,
-    "LecturerId": 1,
+    "LecturerId": 3,
     "semester": 9,
     "npm": "20081010128",
     "cohort": 2020
   },
   {
-    "UserId": 4,
+    "id": 4,
     "MajorId": 14,
-    "LecturerId": 1,
+    "LecturerId": 3,
     "semester": 9,
     "npm": "20081010129",
     "cohort": 2020
   },
   {
-    "UserId": 5,
+    "id": 5,
     "MajorId": 14,
-    "LecturerId": 1,
+    "LecturerId": 3,
     "semester": 9,
     "npm": "20081010130",
     "cohort": 2020
   },
   {
-    "UserId": 6,
+    "id": 6,
     "MajorId": 14,
-    "LecturerId": 1,
+    "LecturerId": 3,
     "semester": 7,
     "npm": "21081010128",
     "cohort": 2021
   },
   {
-    "UserId": 7,
+    "id": 7,
     "MajorId": 14,
-    "LecturerId": 1,
+    "LecturerId": 3,
     "semester": 7,
     "npm": "21081010129",
     "cohort": 2021

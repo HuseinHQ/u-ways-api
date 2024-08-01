@@ -9,19 +9,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Lecturer.hasMany(models.Student);
-      Lecturer.belongsTo(models.User);
+      Lecturer.belongsTo(models.User, {
+        foreignKey: 'id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      });
       Lecturer.belongsTo(models.Major);
       Lecturer.hasMany(models.Chat);
     }
   }
   Lecturer.init(
     {
-      UserId: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
         },
       },
       MajorId: {
@@ -29,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notNull: { msg: 'NULL' },
-          notEmpty: { msg: 'EMPTY' },
         },
       },
       nip: {

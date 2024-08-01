@@ -4,13 +4,8 @@ class ChatController {
   static async getChats(req, res, next) {
     try {
       const { id, role } = req.user;
-      const findStudentOrLecturer =
-        role === 'mahasiswa'
-          ? await Student.findOne({ where: { UserId: id } })
-          : await Lecturer.findOne({ where: { UserId: id } });
 
-      const where =
-        role === 'mahasiswa' ? { StudentId: findStudentOrLecturer.id } : { LecturerId: findStudentOrLecturer.id };
+      const where = role === 'mahasiswa' ? { StudentId: id } : { LecturerId: id };
       let chats = await Chat.findAll({
         where,
         include: [
@@ -19,12 +14,12 @@ class ChatController {
         ],
         order: [['updatedAt', 'DESC']],
       });
-      console.log(chats);
+
       chats = chats.map((el) => ({
         chatId: `chat-${el.id}`,
         updatedAt: el.updatedAt,
         user: {
-          UserId: role === 'mahasiswa' ? el.Lecturer.User.id : el.Student.User.id,
+          id: role === 'mahasiswa' ? el.Lecturer.id : el.Student.id,
           [role === 'mahasiswa' ? 'LecturerId' : 'StudentId']: role === 'mahasiswa' ? el.Lecturer.id : el.Student.id,
           name: role === 'mahasiswa' ? el.Lecturer.User.name : el.Student.User.name,
           email: role === 'mahasiswa' ? el.Lecturer.User.email : el.Student.User.email,

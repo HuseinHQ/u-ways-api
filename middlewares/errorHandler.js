@@ -69,9 +69,17 @@ function errorHandler(err, req, res, next) {
       status = 404;
       errors = { message: `Dosen dengan id ${err.data} tidak ditemukan!` };
       break;
+    case 'StudentNotFound':
+      status = 404;
+      errors = { message: `Mahasiswa dengan id ${err.data} tidak ditemukan!` };
+      break;
     case 'UserNotFound':
       status = 404;
       errors = { message: `User dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'InvalidEmail':
+      status = 404;
+      errors = { message: 'Format email tidak valid / bukan dari UPN' };
       break;
   }
 

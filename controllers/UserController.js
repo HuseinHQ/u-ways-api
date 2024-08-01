@@ -69,10 +69,10 @@ class UserController {
 
   static async completeData(req, res, next) {
     try {
-      const { id: UserId, role } = req.user;
+      const { id, role } = req.user;
       const { MajorId, LecturerId, semester, nip } = req.body;
 
-      const findUser = await User.findByPk(UserId);
+      const findUser = await User.findByPk(id);
       if (findUser.isComplete) throw { name: 'DataComplete' };
 
       let findLecturer;
@@ -86,12 +86,9 @@ class UserController {
         const cohort = '20' + firstTwoDigits;
 
         await sequelize.transaction(async (t) => {
-          const newStudent = await Student.create(
-            { UserId, MajorId, LecturerId, semester, npm, cohort },
-            { transaction: t }
-          );
-          await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
-          const newChat = await Chat.create({ StudentId: newStudent.id, LecturerId }, { transaction: t });
+          await Student.create({ id, MajorId, LecturerId, semester, npm, cohort }, { transaction: t });
+          await User.update({ isComplete: true }, { where: { id } }, { transaction: t });
+          const newChat = await Chat.create({ StudentId: id, LecturerId }, { transaction: t });
 
           // creating new chat document in firestore
           const chatsRef = db.collection('chats').doc(`chat-${newChat.id.toString()}`);
@@ -103,8 +100,8 @@ class UserController {
         });
       } else {
         await sequelize.transaction(async (t) => {
-          await Lecturer.create({ UserId, MajorId, nip }, { transaction: t });
-          await User.update({ isComplete: true }, { where: { id: UserId } }, { transaction: t });
+          await Lecturer.create({ id, MajorId, nip }, { transaction: t });
+          await User.update({ isComplete: true }, { where: { id } }, { transaction: t });
         });
       }
 
@@ -121,7 +118,7 @@ class UserController {
       const findUser = await User.findByPk(id);
       let findUserDetail;
       const condition = {
-        where: { UserId: id },
+        where: { id },
         include: [
           {
             model: Major,
@@ -129,6 +126,7 @@ class UserController {
           },
         ],
       };
+
       if (findUser.role === 'mahasiswa') {
         condition.include.push({
           model: Lecturer,
@@ -158,7 +156,7 @@ class UserController {
         },
       });
     } catch (err) {
-      console.log('----- controllers/UserController.js (getUser) -----\n', err);
+      console.log('----- controllers/UserController.js (getUserProfile) -----\n', err);
       next(err);
     }
   }
@@ -184,12 +182,12 @@ class UserController {
       if (role === 'mahasiswa') {
         await sequelize.transaction(async (t) => {
           await User.update({ name }, { where: { id } }, { transaction: t });
-          await Student.update({ MajorId, LecturerId, semester }, { where: { UserId: id } }, { transaction: t });
+          await Student.update({ MajorId, LecturerId, semester }, { where: { id } }, { transaction: t });
         });
       } else {
         await sequelize.transaction(async (t) => {
           await User.update({ name }, { where: { id } }, { transaction: t });
-          await Lecturer.update({ MajorId, nip }, { where: { UserId: id } }, { transaction: t });
+          await Lecturer.update({ MajorId, nip }, { where: { id } }, { transaction: t });
         });
       }
 

@@ -47,5 +47,19 @@
     "password": "litang123",
     "role": "mahasiswa",
     "isComplete": true
+  },
+  {
+    "name": "Fawwaz Ali Akbar",
+    "email": "fawwaz.ali.if@upnjatim.ac.id",
+    "password": "fawwaz123",
+    "role": "dosen",
+    "isComplete": true
+  },
+  {
+    "name": "Fetty Tri Anggraeni",
+    "email": "fetty.tri.if@upnjatim.ac.id",
+    "password": "fetty123",
+    "role": "dosen",
+    "isComplete": true
   }
 ]

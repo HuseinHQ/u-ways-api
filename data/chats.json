@@ -1,22 +1,22 @@
 [
   {
-    "StudentId": 1,
-    "LecturerId": 1
-  },
-  {
     "StudentId": 2,
-    "LecturerId": 1
-  },
-  {
-    "StudentId": 3,
-    "LecturerId": 1
+    "LecturerId": 3
   },
   {
     "StudentId": 4,
-    "LecturerId": 1
+    "LecturerId": 3
   },
   {
     "StudentId": 5,
-    "LecturerId": 1
+    "LecturerId": 3
+  },
+  {
+    "StudentId": 6,
+    "LecturerId": 3
+  },
+  {
+    "StudentId": 7,
+    "LecturerId": 3
   }
 ]
