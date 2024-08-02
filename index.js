@@ -6,7 +6,11 @@ const router = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
 const fs = require('fs');
 const path = require('path');
-const app = express();
+const app = express({
+  origin: 'https://uways.huseinhk.com', // Replace with your client domain
+  methods: 'GET,POST,PUT,DELETE,PATCH',
+  allowedHeaders: 'Content-Type, Authorization, access_token, refresh_token',
+});
 const PORT = process.env.NODE_LOCAL_PORT || 3000;
 
 // Ensure the uploads directory exists

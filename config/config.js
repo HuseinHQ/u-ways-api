@@ -14,10 +14,10 @@ module.exports = {
     dialect: 'mysql',
   },
   production: {
-    username: 'root',
-    password: null,
-    database: 'database_production',
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    username: 'postgres',
+    password: 'postgres',
+    database: 'uways_db',
+    host: '54.151.218.21',
+    dialect: 'postgres',
   },
 };
