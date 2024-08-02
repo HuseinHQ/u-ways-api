@@ -7,7 +7,7 @@ const errorHandler = require('./middlewares/errorHandler');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.NODE_LOCAL_PORT || 3000;
 
 // Ensure the uploads directory exists
 const uploadDir = path.join(__dirname, 'uploads', 'articles');
@@ -15,13 +15,13 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-app.use(
-  cors({
-    origin: 'https://uways.huseinhk.com', // Replace with your client domain
-    methods: 'GET,POST,PUT,DELETE,PATCH',
-    allowedHeaders: 'Content-Type, Authorization, access_token, refresh_token',
-  })
-);
+app.use((req, res, next) => {
+    req.headers.access_token = req.headers['x-access-token'];
+    req.headers.refresh_token = req.headers['x-refresh-token'];
+    console.log(req.headers);
+    next();
+})
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
