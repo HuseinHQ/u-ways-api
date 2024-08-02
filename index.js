@@ -7,7 +7,7 @@ const errorHandler = require('./middlewares/errorHandler');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.NODE_LOCAL_PORT || 3000;
 
 // Ensure the uploads directory exists
 const uploadDir = path.join(__dirname, 'uploads', 'articles');
