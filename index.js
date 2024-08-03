@@ -15,12 +15,6 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-app.use((req, res, next) => {
-    req.headers.access_token = req.headers['x-access-token'];
-    req.headers.refresh_token = req.headers['x-refresh-token'];
-    console.log(req.headers);
-    next();
-})
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

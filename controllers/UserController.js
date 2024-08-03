@@ -163,7 +163,7 @@ class UserController {
 
   static async refreshToken(req, res, next) {
     try {
-      const { refresh_token: old_access_token } = req.headers;
+      const old_access_token = req.headers['x-refresh-token'];
       const payload = verifyToken(old_access_token);
       const access_token = createAccessToken(payload);
       const refresh_token = createRefreshToken(payload);

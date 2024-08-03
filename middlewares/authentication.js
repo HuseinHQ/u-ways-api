@@ -2,7 +2,8 @@ const { verifyToken, createAccessToken, createRefreshToken } = require('../helpe
 
 function authentication(req, res, next) {
   try {
-    const { access_token, refresh_token } = req.headers;
+    const refresh_token = req.headers['x-refresh-token'];
+    const access_token = req.headers['x-access-token'];
     let payload;
 
     try {
