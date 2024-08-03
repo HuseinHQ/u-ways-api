@@ -4,14 +4,20 @@ const cloudinary = require('../config/cloudinaryConfig');
 class ArticleController {
   static async getArticles(req, res, next) {
     try {
-      let { limit, page } = req.query;
+      let { limit, page, search } = req.query;
       limit = parseInt(limit) || 10;
       page = parseInt(page) || 1;
       const offset = (page - 1) * limit;
 
+      const where = {};
+      if (search) {
+        where.title = { [Sequelize.Op.iLike]: `%${search}%` };
+      }
+
       const articles = await Article.findAll({
         limit,
         offset,
+        where,
         order: [['createdAt', 'DESC']],
       });
 
