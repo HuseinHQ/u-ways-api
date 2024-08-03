@@ -1,4 +1,4 @@
-const { Article } = require('../models/index');
+const { Article, Sequelize } = require('../models/index');
 const cloudinary = require('../config/cloudinaryConfig');
 
 class ArticleController {
@@ -47,13 +47,13 @@ class ArticleController {
   static async editArticle(req, res, next) {
     try {
       const { id } = req.params;
-      const { title, abstract, description } = req.body;
+      const { title, abstract, description, author } = req.body;
       const findArticle = await Article.findByPk(id);
       if (!findArticle) {
         throw { name: 'ArticleNotFound', data: id };
       }
 
-      await Article.update({ title, abstract, description }, { where: { id } });
+      await Article.update({ title, abstract, description, author }, { where: { id } });
       res.json({ data: { message: 'Berhasil mengubah artikel!' } });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (editArticle) -----\n', err);
@@ -63,10 +63,10 @@ class ArticleController {
 
   static async createArticle(req, res, next) {
     try {
-      const { title, abstract, description } = req.body;
-      await Article.create({ title, abstract, description });
+      const { title, abstract, description, author } = req.body;
+      const newArticle = await Article.create({ title, abstract, description, author });
 
-      res.json({ data: { message: 'Berhasil menambah artikel!' } });
+      res.json({ data: { message: 'Berhasil menambah artikel!', id: newArticle.id } });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (createArticle) -----\n', err);
       next(err);
@@ -94,6 +94,40 @@ class ArticleController {
       res.status(201).json({ data: { message: 'Gambar berhasil diunggah!' } });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (postArticleImage) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async bulkDeleteArticle(req, res, next) {
+    try {
+      const ids = req.body;
+      await Article.destroy({
+        where: {
+          id: {
+            [Sequelize.Op.in]: ids,
+          },
+        },
+      });
+
+      res.json({ data: { message: 'Berhasil menghapus artikel!' } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (bulkDeleteArticle) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async deleteArticle(req, res, next) {
+    try {
+      const { id } = req.params;
+      const findArticle = await Article.findByPk(id);
+      if (!findArticle) {
+        throw { name: 'ArticleNotFound', data: id };
+      }
+
+      await Article.destroy({ where: { id } });
+      res.json({ data: { message: `Artikel dengan id ${id} berhasil dihapus!` } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (deleteArticle) -----\n', err);
       next(err);
     }
   }

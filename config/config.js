@@ -1,9 +1,9 @@
 module.exports = {
   development: {
-    username: process.env.POSTGRESDB_USER,
-    password: process.env.POSTGRESDB_ROOT_PASSWORD,
-    database: process.env.POSTGRESDB_DATABASE,
-    host: 'postgresdb',
+    username: 'postgres',
+    password: 'postgres',
+    database: 'uways_db_dev',
+    host: 'localhost',
     dialect: 'postgres',
   },
   test: {

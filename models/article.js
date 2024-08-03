@@ -39,11 +39,16 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: { msg: 'EMPTY' },
         },
       },
-      imageUrl: {
+      author: {
         type: DataTypes.STRING,
+        allowNull: false,
         validate: {
+          notNull: { msg: 'NULL' },
           notEmpty: { msg: 'EMPTY' },
         },
+      },
+      imageUrl: {
+        type: DataTypes.STRING,
       },
     },
     {

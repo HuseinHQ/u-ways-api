@@ -18,6 +18,9 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
+      author: {
+        type: Sequelize.STRING,
+      },
       imageUrl: {
         type: Sequelize.STRING,
       },

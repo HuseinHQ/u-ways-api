@@ -83,6 +83,7 @@ function errorHandler(err, req, res, next) {
       break;
   }
 
+  console.log(errors);
   res.status(status).json({ errors });
 }
 

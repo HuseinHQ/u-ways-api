@@ -4,3 +4,4 @@ node_modules
 
 serviceAccount.json
 db
+uploads/articles
