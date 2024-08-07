@@ -9,17 +9,29 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      UserId: {
-        type: Sequelize.INTEGER,
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      score: {
-        type: Sequelize.INTEGER,
+      details: {
+        type: Sequelize.JSONB,
+        defaultValue: [],
       },
       semester: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       part: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      starTime: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
+      endTime: {
+        type: Sequelize.DATE,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,

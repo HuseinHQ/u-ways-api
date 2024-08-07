@@ -1,14 +1,1458 @@
 [
   {
-    "UserId": 2,
-    "score": 90,
+    "title": "Semester 1 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus baru saya.",
+          "Saya merasa mampu menyesuaikan diri dengan tuntutan akademik di perguruan tinggi.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan baik.",
+          "Saya merasa mudah berinteraksi dan berteman dengan mahasiswa lain."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa bahagia dan antusias memulai kehidupan sebagai mahasiswa.",
+          "Saya merasa cemas tentang bagaimana saya akan menghadapi semester ini.",
+          "Saya sering merasa stres dengan tugas dan jadwal kuliah yang padat.",
+          "Saya merasa mampu mengelola perasaan saya dengan baik di tengah berbagai perubahan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 1,
+    "part": 0
+  },
+  {
+    "title": "Semester 1 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa telah beradaptasi dengan baik di lingkungan kampus.",
+          "Saya merasa nyaman dengan rutinitas akademik dan kehidupan kampus saya.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dengan teman-teman sekelas."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan kehidupan kampus saya sejauh ini.",
+          "Saya merasa cemas mengenai ujian dan hasil akhir semester.",
+          "Saya sering merasa stres dengan beban tugas yang menumpuk.",
+          "Saya merasa mampu mengelola emosi saya meskipun menghadapi tekanan akademik."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
     "semester": 1,
     "part": 1
   },
   {
-    "UserId": 2,
-    "score": 85,
-    "semester": 1,
-    "part": 2
+    "title": "Semester 2 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah satu semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap tuntutan akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa memiliki hubungan yang baik dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester pertama.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 2,
+    "part": 0
+  },
+  {
+    "title": "Semester 2 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah dua semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian akhir.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester pertama.",
+          "Saya merasa senang menyelesaikan semester kedua ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 2,
+    "part": 1
+  },
+  {
+    "title": "Semester 3 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah dua semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap tuntutan akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa memiliki hubungan yang baik dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 3,
+    "part": 0
+  },
+  {
+    "title": "Semester 3 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tiga semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 3,
+    "part": 1
+  },
+  {
+    "title": "Semester 4 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tiga semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 4,
+    "part": 0
+  },
+  {
+    "title": "Semester 4 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah empat semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 4,
+    "part": 1
+  },
+  {
+    "title": "Semester 5 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah empat semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 5,
+    "part": 0
+  },
+  {
+    "title": "Semester 5 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah lima semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 5,
+    "part": 1
+  },
+  {
+    "title": "Semester 6 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah lima semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 6,
+    "part": 0
+  },
+  {
+    "title": "Semester 6 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah enam semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 6,
+    "part": 1
+  },
+  {
+    "title": "Semester 7 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah enam semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 7,
+    "part": 0
+  },
+  {
+    "title": "Semester 7 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tujuh semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 7,
+    "part": 1
+  },
+  {
+    "title": "Semester 8 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tujuh semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 8,
+    "part": 0
+  },
+  {
+    "title": "Semester 8 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah delapan semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 8,
+    "part": 1
+  },
+  {
+    "title": "Semester 9 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah delapan semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 9,
+    "part": 0
+  },
+  {
+    "title": "Semester 9 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sembilan semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 9,
+    "part": 1
+  },
+  {
+    "title": "Semester 10 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sembilan semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 10,
+    "part": 0
+  },
+  {
+    "title": "Semester 10 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sepuluh semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 10,
+    "part": 1
+  },
+  {
+    "title": "Semester 11 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sepuluh semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 11,
+    "part": 0
+  },
+  {
+    "title": "Semester 11 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sebelas semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 11,
+    "part": 1
+  },
+  {
+    "title": "Semester 12 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah sebelas semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 12,
+    "part": 0
+  },
+  {
+    "title": "Semester 12 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah dua belas semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 12,
+    "part": 1
+  },
+  {
+    "title": "Semester 13 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah dua belas semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 13,
+    "part": 0
+  },
+  {
+    "title": "Semester 13 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tiga belas semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 13,
+    "part": 1
+  },
+  {
+    "title": "Semester 14 Awal",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah tiga belas semester.",
+          "Saya merasa dapat menyesuaikan diri dengan baik terhadap beban akademik yang semakin meningkat.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa lebih percaya diri dan optimis tentang kemampuan akademik saya.",
+          "Saya merasa cemas tentang tantangan akademik yang akan datang.",
+          "Saya merasa lebih mampu mengelola stres dibandingkan semester sebelumnya.",
+          "Saya merasa senang kembali ke kampus setelah liburan."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 14,
+    "part": 0
+  },
+  {
+    "title": "Semester 14 Akhir",
+    "details": [
+      {
+        "partName": "Penyesuaian Diri",
+        "questions": [
+          "Saya merasa nyaman dengan lingkungan kampus setelah empat belas semester.",
+          "Saya merasa telah menyesuaikan diri dengan tuntutan akademik yang semakin kompleks.",
+          "Saya merasa dapat mengatur waktu antara kuliah dan kegiatan lainnya dengan efektif.",
+          "Saya merasa memiliki hubungan yang baik dan suportif dengan teman-teman dan dosen."
+        ]
+      },
+      {
+        "partName": "Suasana Hati",
+        "questions": [
+          "Saya merasa puas dengan pencapaian akademik saya semester ini.",
+          "Saya merasa cemas tentang hasil ujian dan tugas akhir semester.",
+          "Saya merasa mampu mengelola stres lebih baik dibandingkan semester sebelumnya.",
+          "Saya merasa senang dan bangga telah menyelesaikan semester ini."
+        ]
+      },
+      {
+        "partName": "Makan dan Tidur",
+        "questions": [
+          "Saya merasa cukup tidur setiap malam meskipun dengan jadwal kuliah yang padat.",
+          "Saya merasa memiliki pola makan yang teratur dan sehat.",
+          "Saya merasa segar dan berenergi ketika bangun di pagi hari.",
+          "Saya merasa tidak kesulitan menjaga pola makan yang sehat meskipun dengan kesibukan kuliah."
+        ]
+      },
+      {
+        "partName": "Depresi dan Cemas",
+        "questions": [
+          "Saya sering merasa sedih atau tertekan tanpa alasan yang jelas.",
+          "Saya sering merasa cemas atau gelisah tentang tugas dan ujian.",
+          "Saya merasa tidak berdaya atau putus asa ketika menghadapi tantangan akademik.",
+          "Saya merasa sulit memotivasi diri sendiri untuk belajar."
+        ]
+      },
+      {
+        "partName": "Perfeksionisme",
+        "questions": [
+          "Saya merasa harus mencapai standar yang sangat tinggi dalam semua tugas kuliah saya.",
+          "Saya sering merasa tidak puas dengan hasil kerja saya meskipun orang lain mengatakan bahwa hasilnya bagus",
+          "Saya merasa cemas jika tidak dapat menyelesaikan tugas dengan sempurna.",
+          "Saya merasa sulit menerima kesalahan atau kegagalan."
+        ]
+      }
+    ],
+    "semester": 14,
+    "part": 1
   }
 ]

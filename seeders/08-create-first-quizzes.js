@@ -3,7 +3,11 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    const data = require('../data/quizzes.json');
+    let data = require('../data/quizzes.json');
+    data = data.map((el) => {
+      el.details = JSON.stringify(el.details);
+      return el;
+    });
     await queryInterface.bulkInsert('Quizzes', data, {});
   },
 

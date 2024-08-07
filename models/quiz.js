@@ -8,31 +8,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Quiz.belongsTo(models.User);
+      // define association here
     }
   }
   Quiz.init(
     {
-      UserId: {
-        type: DataTypes.INTEGER,
+      title: {
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
           notNull: { msg: 'NULL' },
           notEmpty: { msg: 'EMPTY' },
         },
       },
-      score: {
-        type: DataTypes.FLOAT,
-        defaultValue: 0,
+      details: {
+        type: DataTypes.JSONB,
+        allowNull: false,
         validate: {
-          min: {
-            args: [0],
-            msg: 'MIN',
-          },
-          max: {
-            args: [100],
-            msg: 'MAX',
-          },
+          notNull: { msg: 'NULL' },
+          notEmpty: { msg: 'EMPTY' },
         },
       },
       semester: {
@@ -52,17 +46,24 @@ module.exports = (sequelize, DataTypes) => {
       },
       part: {
         type: DataTypes.INTEGER,
-        defaultValue: 0,
+        allowNull: false,
         validate: {
+          notNull: { msg: 'NULL' },
           min: {
-            args: [1],
+            args: [0],
             msg: 'MIN',
           },
           max: {
-            args: [2],
+            args: [1],
             msg: 'MAX',
           },
         },
+      },
+      starTime: {
+        type: DataTypes.DATE,
+      },
+      endTime: {
+        type: DataTypes.DATE,
       },
     },
     {

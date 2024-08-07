@@ -6,6 +6,7 @@ const router = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
 const fs = require('fs');
 const path = require('path');
+const pageNotFound = require('./middlewares/pageNotFound');
 const app = express();
 const PORT = process.env.NODE_LOCAL_PORT || 3000;
 
@@ -27,6 +28,7 @@ app.use(
 );
 
 app.use(router);
+app.use(pageNotFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => {

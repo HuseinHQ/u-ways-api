@@ -1,6 +1,7 @@
 const groupErrors = require('../helpers/groupErrors');
 
 function errorHandler(err, req, res, next) {
+  console.log(err);
   let status = 500;
   let errors = { message: 'Internal Server Error' };
 
@@ -80,6 +81,20 @@ function errorHandler(err, req, res, next) {
     case 'InvalidEmail':
       status = 404;
       errors = { message: 'Format email tidak valid / bukan dari UPN' };
+      break;
+    case 'QuizExist':
+      status = 409;
+      errors = {
+        message: `Kuis dengan semester ${err.data.semester} ${err.data.part === 1 ? 'akhir' : 'awal'} sudah tersedia!`,
+      };
+      break;
+    case 'QuizNotFound':
+      status = 404;
+      errors = { message: `Kuis dengan id ${err.data} tidak ditemukan!` };
+      break;
+    case 'StudentOnly':
+      status = 401;
+      errors = { message: 'Anda bukan mahasiswa!' };
       break;
   }
 
