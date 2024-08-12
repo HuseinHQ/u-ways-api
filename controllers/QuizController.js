@@ -21,12 +21,21 @@ class QuizController {
 
   static async getQuizzes(req, res, next) {
     try {
+      const { search } = req.query;
+      const where = {};
+      if (search) {
+        where.title = {
+          [Sequelize.Op.iLike]: `%${search}%`,
+        };
+      }
+
       const quizzes = await Quiz.findAll({
         attributes: ['id', 'title', 'semester', 'part'],
         order: [
           ['semester', 'ASC'],
           ['part', 'ASC'],
         ],
+        where,
       });
       res.json({ data: quizzes });
     } catch (err) {
@@ -108,7 +117,10 @@ class QuizController {
       if (!findQuiz) {
         throw { name: 'QuizNotFound', data: id };
       }
-      findQuiz.details = JSON.parse(findQuiz.details);
+      // Check if findQuiz.details is a string before parsing
+      if (typeof findQuiz.details === 'string') {
+        findQuiz.details = JSON.parse(findQuiz.details);
+      }
 
       res.json({ data: findQuiz });
     } catch (err) {
@@ -127,7 +139,7 @@ class QuizController {
       const semester = findStudent.semester;
       const part = getSemesterPart();
 
-      const quizzes = await Quiz.findAll({ where: { semester, part } });
+      const quizzes = await Quiz.findOne({ where: { semester, part } });
       res.json({ data: quizzes });
     } catch (err) {
       console.log('----- controllers/QuizController.js (searchQuiz) -----\n', err);
