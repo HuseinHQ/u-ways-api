@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE',
       });
       Student.hasOne(models.Chat);
+      Student.hasMany(models.QuizResult);
     }
   }
   Student.init(

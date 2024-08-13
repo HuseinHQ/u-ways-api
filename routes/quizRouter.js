@@ -1,7 +1,6 @@
 const QuizController = require('../controllers/QuizController');
 const adminOnly = require('../middlewares/adminOnly');
 const authentication = require('../middlewares/authentication');
-const quiz = require('../models/quiz');
 const quizRouter = require('express').Router();
 
 quizRouter.use(authentication);

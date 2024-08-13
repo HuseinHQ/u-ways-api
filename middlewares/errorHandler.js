@@ -1,7 +1,6 @@
 const groupErrors = require('../helpers/groupErrors');
 
 function errorHandler(err, req, res, next) {
-  console.log(err);
   let status = 500;
   let errors = { message: 'Internal Server Error' };
 
@@ -96,6 +95,9 @@ function errorHandler(err, req, res, next) {
       status = 401;
       errors = { message: 'Anda bukan mahasiswa!' };
       break;
+    case 'NoQuiz':
+      status = 401;
+      errors = { message: 'Belum ada kuis yang bisa diambil!' };
   }
 
   console.log(errors);

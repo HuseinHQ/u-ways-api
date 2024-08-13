@@ -1,5 +1,5 @@
 const getSemesterPart = require('../helpers/getCurrentSemester');
-const { Quiz, Student, Sequelize } = require('../models/index');
+const { Quiz, Student, Sequelize, QuizResult } = require('../models/index');
 
 class QuizController {
   static async getQuizHistory(req, res, next) {
@@ -139,8 +139,32 @@ class QuizController {
       const semester = findStudent.semester;
       const part = getSemesterPart();
 
-      const quizzes = await Quiz.findOne({ where: { semester, part } });
-      res.json({ data: quizzes });
+      const findLatestQuizResult = await QuizResult.findOne({
+        order: [
+          ['semester', 'DESC'],
+          ['part', 'DESC'],
+        ],
+        where: { StudentId: id },
+      });
+      const lastQuizSemester = findLatestQuizResult.semester;
+      const lastQuizPart = findLatestQuizResult.part;
+
+      if (lastQuizSemester > semester || (lastQuizSemester === semester && lastQuizPart >= part)) {
+        throw { name: 'NoQuiz' };
+      }
+
+      const where = {};
+      where.semester = lastQuizPart === 0 ? lastQuizSemester : lastQuizSemester + 1;
+      where.part = lastQuizPart === 0 ? 1 : 0;
+
+      const findQuiz = await Quiz.findOne({
+        order: [
+          ['semester', 'ASC'],
+          ['part', 'ASC'],
+        ],
+        where,
+      });
+      res.json({ data: findQuiz });
     } catch (err) {
       console.log('----- controllers/QuizController.js (searchQuiz) -----\n', err);
       next(err);
