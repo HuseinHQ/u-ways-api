@@ -59,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      starTime: {
+      startTime: {
         type: DataTypes.DATE,
       },
       endTime: {

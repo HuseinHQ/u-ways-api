@@ -6,12 +6,12 @@ const quizRouter = require('express').Router();
 quizRouter.use(authentication);
 
 quizRouter.get('/student', QuizController.studentQuiz);
+quizRouter.get('/:id', QuizController.getQuizDetail);
 
 quizRouter.use(adminOnly);
 quizRouter.get('/', QuizController.getQuizzes);
 quizRouter.post('/', QuizController.postQuiz);
 quizRouter.delete('/', QuizController.bulkDeleteQuiz);
-quizRouter.get('/:id', QuizController.getQuizDetail);
 quizRouter.delete('/:id', QuizController.deleteQuiz);
 quizRouter.put('/:id', QuizController.editQuiz);
 

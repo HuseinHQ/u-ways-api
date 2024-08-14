@@ -136,37 +136,60 @@ class QuizController {
         throw { name: 'StudentOnly' };
       }
       const findStudent = await Student.findByPk(id);
-      const semester = findStudent.semester;
-      const part = getSemesterPart();
+      const currentStudentSemester = findStudent.semester;
+      const currentPart = getSemesterPart();
 
-      const findLatestQuizResult = await QuizResult.findOne({
+      const findQuizResult = await QuizResult.findAll({
+        attributes: ['semester', 'part'],
         order: [
-          ['semester', 'DESC'],
-          ['part', 'DESC'],
+          ['semester', 'ASC'],
+          ['part', 'ASC'],
         ],
         where: { StudentId: id },
       });
-      const lastQuizSemester = findLatestQuizResult.semester;
-      const lastQuizPart = findLatestQuizResult.part;
+      const lastQuizSemester = findQuizResult.at(-1).semester;
+      const lastQuizPart = findQuizResult.at(-1).part;
 
-      if (lastQuizSemester > semester || (lastQuizSemester === semester && lastQuizPart >= part)) {
-        throw { name: 'NoQuiz' };
+      let where = {};
+      if (lastQuizSemester && lastQuizPart) {
+        where = {
+          [Sequelize.Op.or]: [
+            {
+              semester: {
+                [Sequelize.Op.between]: [lastQuizSemester, currentStudentSemester - 1],
+              },
+              part: {
+                [Sequelize.Op.in]: lastQuizPart === 0 ? [1] : [0, 1],
+              },
+            },
+            {
+              semester: currentStudentSemester,
+              part: {
+                [Sequelize.Op.in]: currentPart === 0 ? [0] : [0, 1],
+              },
+            },
+          ],
+        };
       }
 
-      const where = {};
-      where.semester = lastQuizPart === 0 ? lastQuizSemester : lastQuizSemester + 1;
-      where.part = lastQuizPart === 0 ? 1 : 0;
-
-      const findQuiz = await Quiz.findOne({
+      const findQuiz = await Quiz.findAll({
+        attributes: ['id', 'title', 'semester', 'part', 'startTime', 'endTime'],
         order: [
           ['semester', 'ASC'],
           ['part', 'ASC'],
         ],
         where,
       });
-      res.json({ data: findQuiz });
+
+      const result = findQuiz.filter((quiz) => {
+        return !findQuizResult.some((result) => {
+          return quiz.semester === result.semester && quiz.part === result.part;
+        });
+      });
+
+      res.json({ data: result });
     } catch (err) {
-      console.log('----- controllers/QuizController.js (searchQuiz) -----\n', err);
+      console.log('----- controllers/QuizController.js (studentQuiz) -----\n', err);
       next(err);
     }
   }

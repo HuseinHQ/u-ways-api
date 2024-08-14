@@ -7,5 +7,6 @@ quizResultRouter.use(authentication);
 quizResultRouter.use(studentOnly);
 
 quizResultRouter.get('/', QuizResultController.getAllQuizResults);
+quizResultRouter.post('/', QuizResultController.createQuizResult);
 
 module.exports = quizResultRouter;

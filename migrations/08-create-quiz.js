@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      starTime: {
+      startTime: {
         type: Sequelize.DATE,
         allowNull: true,
       },

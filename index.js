@@ -9,6 +9,8 @@ const path = require('path');
 const pageNotFound = require('./middlewares/pageNotFound');
 const app = express();
 const PORT = process.env.NODE_LOCAL_PORT || 3000;
+const schedule = require('node-schedule');
+const StudentController = require('./controllers/StudentController');
 
 // Ensure the uploads directory exists
 const uploadDir = path.join(__dirname, 'uploads', 'articles');
@@ -30,6 +32,9 @@ app.use(
 app.use(router);
 app.use(pageNotFound);
 app.use(errorHandler);
+
+// a schedule to update student semester every end of july and end of january
+schedule.scheduleJob('59 23 31 7,1 *', StudentController.incrementAllStudentSemester);
 
 app.listen(PORT, () => {
   console.log(`App listens to port: ${PORT}`);

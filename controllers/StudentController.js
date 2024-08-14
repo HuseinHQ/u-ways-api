@@ -195,6 +195,15 @@ class StudentController {
       next(err);
     }
   }
+
+  static async incrementAllStudentSemester() {
+    try {
+      await Student.update({ semester: Sequelize.literal('semester + 1') }, { order: [['id', 'DESC']], where: {} });
+      console.log('Berhasil menambahkan semester untuk semua mahasiswa!');
+    } catch (err) {
+      console.log('----- controllers/StudentController.js (incrementAllStudentSemester) -----\n', err);
+    }
+  }
 }
 
 module.exports = StudentController;
