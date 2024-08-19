@@ -89,7 +89,7 @@ function errorHandler(err, req, res, next) {
       break;
     case 'QuizNotFound':
       status = 404;
-      errors = { message: `Kuis dengan id ${err.data} tidak ditemukan!` };
+      errors = { message: `Kuis ${err.data ? 'dengan id ' + err.data + ' ' : ''}tidak ditemukan!` };
       break;
     case 'StudentOnly':
       status = 401;
@@ -98,6 +98,11 @@ function errorHandler(err, req, res, next) {
     case 'NoQuiz':
       status = 401;
       errors = { message: 'Belum ada kuis yang bisa diambil!' };
+      break;
+    case 'QuizTaken':
+      status = 409;
+      errors = { message: 'Kuis sudah pernah diambil!' };
+      break;
   }
 
   console.log(errors);

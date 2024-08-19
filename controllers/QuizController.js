@@ -136,9 +136,10 @@ class QuizController {
         throw { name: 'StudentOnly' };
       }
       const findStudent = await Student.findByPk(id);
-      const currentStudentSemester = findStudent.semester;
+      const currentSemester = findStudent.semester;
       const currentPart = getSemesterPart();
 
+      // mendapatkan data quiz yang sudah pernah disubmit oleh mahasiswa sebelumnya
       const findQuizResult = await QuizResult.findAll({
         attributes: ['semester', 'part'],
         order: [
@@ -147,31 +148,36 @@ class QuizController {
         ],
         where: { StudentId: id },
       });
-      const lastQuizSemester = findQuizResult.at(-1).semester;
-      const lastQuizPart = findQuizResult.at(-1).part;
+
+      const lastSemester = findQuizResult?.at(-1)?.semester;
+      const lastPart = findQuizResult?.at(-1)?.part;
 
       let where = {};
-      if (lastQuizSemester && lastQuizPart) {
+      if (lastSemester !== undefined && lastPart !== undefined) {
         where = {
           [Sequelize.Op.or]: [
             {
-              semester: {
-                [Sequelize.Op.between]: [lastQuizSemester, currentStudentSemester - 1],
-              },
+              semester: lastSemester,
               part: {
-                [Sequelize.Op.in]: lastQuizPart === 0 ? [1] : [0, 1],
+                [Sequelize.Op.gt]: lastPart,
               },
             },
             {
-              semester: currentStudentSemester,
+              semester: {
+                [Sequelize.Op.between]: [lastSemester + 1, currentSemester - 1],
+              },
+            },
+            {
+              semester: currentSemester,
               part: {
-                [Sequelize.Op.in]: currentPart === 0 ? [0] : [0, 1],
+                [Sequelize.Op.lte]: currentPart,
               },
             },
           ],
         };
       }
 
+      // mendapatkan semua quiz yang belum pernah dikerjakan dan kurang dari sama dengan semester mahasiswa saat ini
       const findQuiz = await Quiz.findAll({
         attributes: ['id', 'title', 'semester', 'part', 'startTime', 'endTime'],
         order: [
