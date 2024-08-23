@@ -5,7 +5,10 @@ class QuizResultController {
     try {
       const { id } = req.user;
       const quizResults = await QuizResult.findAll({ where: { StudentId: id } });
-      res.json({ data: quizResults });
+      const scoreSum = quizResults.reduce((acc, curr) => +acc + +curr.score, 0);
+      const scoreAverage = scoreSum / quizResults.length;
+      const formattedScoreAverage = scoreAverage % 1 === 0 ? scoreAverage : scoreAverage.toFixed(1);
+      res.json({ data: quizResults, summary: { scoreAverage: formattedScoreAverage } });
     } catch (err) {
       console.log('----- controllers/QuizResultController.js (getAllQuizResults) -----\n', err);
       next(err);
@@ -38,6 +41,18 @@ class QuizResultController {
       res.status(201).json({ data: { message: 'Berhasil mengirim kuis!', newQuizId: newQuizResult.id } });
     } catch (err) {
       console.log('----- controllers/QuizResultController.js (createQuizResult) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async getQuizResult(req, res, next) {
+    try {
+      const { id } = req.params;
+      const quizResult = await QuizResult.findByPk(id);
+
+      res.json({ data: quizResult });
+    } catch (err) {
+      console.log('----- controllers/QuizResultController.js (getQuizResult) -----\n', err);
       next(err);
     }
   }

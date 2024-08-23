@@ -8,5 +8,6 @@ quizResultRouter.use(studentOnly);
 
 quizResultRouter.get('/', QuizResultController.getAllQuizResults);
 quizResultRouter.post('/', QuizResultController.createQuizResult);
+quizResultRouter.get('/:id', QuizResultController.getQuizResult);
 
 module.exports = quizResultRouter;
