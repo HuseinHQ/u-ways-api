@@ -58,7 +58,6 @@ class ChatController {
         throw { name: 'CloudinaryError', data: error };
       });
 
-      await Article.update({ imageUrl: secure_url }, { where: { id } });
       res.status(201).json({ data: { message: 'Gambar berhasil diunggah!' } });
     } catch (err) {
       console.log('----- controllers/ArticleController.js (postImage) -----\n', err);
