@@ -46,6 +46,25 @@ class ChatController {
       next(err);
     }
   }
+
+  static async postImage(req, res, next) {
+    try {
+      const { file } = req.files;
+      if (!file) {
+        throw { name: 'NoFileUpload' };
+      }
+
+      const { secure_url } = await cloudinary.uploader.upload(file.tempFilePath).catch((error) => {
+        throw { name: 'CloudinaryError', data: error };
+      });
+
+      await Article.update({ imageUrl: secure_url }, { where: { id } });
+      res.status(201).json({ data: { message: 'Gambar berhasil diunggah!' } });
+    } catch (err) {
+      console.log('----- controllers/ArticleController.js (postImage) -----\n', err);
+      next(err);
+    }
+  }
 }
 
 module.exports = ChatController;

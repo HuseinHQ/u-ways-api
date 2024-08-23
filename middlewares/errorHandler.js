@@ -53,9 +53,13 @@ function errorHandler(err, req, res, next) {
       status = 400;
       errors = { message: 'Tidak ada gambar untuk diupload!' };
       break;
+    case 'NoFileUpload':
+      status = 400;
+      errors = { message: 'Tidak ada file untuk diupload!' };
+      break;
     case 'CloudinaryError':
       status = 500;
-      errors = { message: 'Terjadi masalah pada Cloudinary!' };
+      errors = { message: 'Terjadi masalah pada Cloudinary!', detail: err.data };
       break;
     case 'QuestionNotFound':
       status = 404;
