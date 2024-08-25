@@ -1,4 +1,5 @@
 const { Chat, Lecturer, Student, User, Sequelize, sequelize } = require('../models/index');
+const cloudinary = require('../config/cloudinaryConfig');
 
 class ChatController {
   static async getChats(req, res, next) {
@@ -47,20 +48,21 @@ class ChatController {
     }
   }
 
-  static async postImage(req, res, next) {
+  static async postFile(req, res, next) {
     try {
       const { file } = req.files;
       if (!file) {
         throw { name: 'NoFileUpload' };
       }
 
-      const { secure_url } = await cloudinary.uploader.upload(file.tempFilePath).catch((error) => {
-        throw { name: 'CloudinaryError', data: error };
+      const { secure_url } = await cloudinary.uploader.upload(file.tempFilePath, {
+        resource_type: 'auto', // Ensure the resource type is set to auto
+        flags: 'attachment', // Optional: Set content disposition to attachment
       });
 
-      res.status(201).json({ data: { message: 'Gambar berhasil diunggah!' } });
+      res.status(201).json({ data: { url: secure_url } });
     } catch (err) {
-      console.log('----- controllers/ArticleController.js (postImage) -----\n', err);
+      console.log('----- controllers/ArticleController.js (postFile) -----\n', err);
       next(err);
     }
   }
