@@ -5,3 +5,4 @@ node_modules
 serviceAccount.json
 db
 uploads/articles
+.DS_Store

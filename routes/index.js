@@ -11,6 +11,7 @@ const quizRouter = require('./quizRouter');
 const questionRouter = require('./questionRouter');
 const adminRouter = require('./adminRouter');
 const quizResultRouter = require('./quizResultRouter');
+const carouselRouter = require('./carouselRouter');
 const router = express.Router();
 
 router.use('/auth', authRouter);
@@ -25,5 +26,6 @@ router.use('/quizzes', quizRouter);
 router.use('/questions', questionRouter);
 router.use('/admin', adminRouter);
 router.use('/quiz-results', quizResultRouter);
+router.use('/carousels', carouselRouter);
 
 module.exports = router;
