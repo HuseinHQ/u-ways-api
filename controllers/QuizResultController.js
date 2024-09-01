@@ -8,7 +8,7 @@ class QuizResultController {
       const scoreSum = quizResults.reduce((acc, curr) => +acc + +curr.score, 0);
       const scoreAverage = scoreSum / quizResults.length;
       const formattedScoreAverage = scoreAverage % 1 === 0 ? scoreAverage : scoreAverage.toFixed(1);
-      res.json({ data: quizResults, summary: { scoreAverage: formattedScoreAverage } });
+      res.json({ data: quizResults, summary: { totalScore: scoreSum, scoreAverage: formattedScoreAverage } });
     } catch (err) {
       console.log('----- controllers/QuizResultController.js (getAllQuizResults) -----\n', err);
       next(err);

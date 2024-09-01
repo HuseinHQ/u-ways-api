@@ -1,10 +1,11 @@
+const generateQuizArray = require('../helpers/generateQuizArray');
 const getSemesterPart = require('../helpers/getCurrentSemester');
-const { Quiz, Student, Sequelize, QuizResult } = require('../models/index');
+const { Quiz, Student, Sequelize, QuizResult, NewQuiz } = require('../models/index');
 
 class QuizController {
   static async getQuizHistory(req, res, next) {
     try {
-      const { id, role } = req.user;
+      const { id } = req.user;
       const quizzes = await Quiz.findAll({ where: { UserId: id } });
       let totalScore = 0;
       const data = quizzes.map((el) => {
@@ -196,6 +197,57 @@ class QuizController {
       res.json({ data: result });
     } catch (err) {
       console.log('----- controllers/QuizController.js (studentQuiz) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async getAvailableQuizzes(req, res, next) {
+    try {
+      const { id, role } = req.user;
+      if (role !== 'mahasiswa') {
+        throw { name: 'StudentOnly' };
+      }
+      const findStudent = await Student.findByPk(id);
+      const currentSemester = findStudent.semester;
+      const currentPart = getSemesterPart();
+
+      const findQuizResult = await QuizResult.findAll({
+        attributes: ['semester', 'part'],
+        order: [
+          ['semester', 'ASC'],
+          ['part', 'ASC'],
+        ],
+        where: { StudentId: id },
+      });
+
+      const existingResults = findQuizResult.map((result) => ({
+        semester: result.semester,
+        part: result.part,
+      }));
+
+      console.log('Existing Results:', existingResults);
+
+      const result = generateQuizArray(currentSemester, currentPart, existingResults);
+      console.log('Generated Result:', result);
+      res.json({ data: result });
+    } catch (err) {
+      console.log('----- controllers/QuizController.js (getQuizResult) -----\n', err);
+      next(err);
+    }
+  }
+
+  static async getQuiz(req, res, next) {
+    try {
+      const { role } = req.user;
+      if (role !== 'mahasiswa') {
+        throw { name: 'StudentOnly' };
+      }
+
+      const findQuiz = await NewQuiz.findAll();
+
+      res.json({ data: findQuiz });
+    } catch (err) {
+      console.log('----- controllers/QuizController.js (getQuiz) -----\n', err);
       next(err);
     }
   }

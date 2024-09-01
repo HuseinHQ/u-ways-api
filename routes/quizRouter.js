@@ -6,6 +6,8 @@ const quizRouter = require('express').Router();
 quizRouter.use(authentication);
 
 quizRouter.get('/student', QuizController.studentQuiz);
+quizRouter.get('/available', QuizController.getAvailableQuizzes);
+quizRouter.get('/new-quiz', QuizController.getQuiz);
 quizRouter.get('/:id', QuizController.getQuizDetail);
 
 quizRouter.use(adminOnly);
