@@ -1,5 +1,6 @@
 const { Chat, Lecturer, Student, User, Sequelize, sequelize } = require('../models/index');
 const cloudinary = require('../config/cloudinaryConfig');
+const { bucket } = require('../config/firebaseConfig');
 
 class ChatController {
   static async getChats(req, res, next) {
@@ -50,19 +51,35 @@ class ChatController {
 
   static async postFile(req, res, next) {
     try {
+      const tes = req.files;
+      console.log('????', tes);
       const { file } = req.files;
       if (!file) {
         throw { name: 'NoFileUpload' };
       }
 
-      const { secure_url } = await cloudinary.uploader.upload(file.tempFilePath, {
-        resource_type: 'auto', // Ensure the resource type is set to auto
-        flags: 'attachment', // Optional: Set content disposition to attachment
+      const blob = bucket.file(file.name);
+      const blobStream = blob.createWriteStream({
+        metadata: {
+          contentType: file.mimetype,
+        },
       });
 
-      res.status(201).json({ data: { url: secure_url } });
+      blobStream.on('error', (err) => {
+        console.log('----- controllers/ChatController.js (postFile) -----\n', err);
+        next(err);
+      });
+
+      blobStream.on('finish', async () => {
+        await blob.makePublic();
+        const url = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+        res.status(201).json({ data: { url } });
+      });
+
+      // Ensure the file data is correctly passed to the stream
+      blobStream.end(file.data);
     } catch (err) {
-      console.log('----- controllers/ArticleController.js (postFile) -----\n', err);
+      console.log('----- controllers/ChatController.js (postFile) -----\n', err);
       next(err);
     }
   }

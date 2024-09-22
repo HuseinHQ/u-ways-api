@@ -1,4 +1,4 @@
-const db = require('../config/firestoreDatabase');
+const { db } = require('../config/firebaseConfig');
 const { comparePassword } = require('../helpers/bcrypt');
 const checkEmailAndRole = require('../helpers/checkEmailAndRole');
 const { createAccessToken, createRefreshToken, verifyToken } = require('../helpers/jwt');
