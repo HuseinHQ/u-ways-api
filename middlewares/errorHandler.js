@@ -107,6 +107,10 @@ function errorHandler(err, req, res, next) {
       status = 409;
       errors = { message: 'Kuis sudah pernah diambil!' };
       break;
+    case 'SequelizeDatabaseError':
+      status = 404;
+      errors = { message: err.message };
+      break;
   }
 
   console.log(errors);

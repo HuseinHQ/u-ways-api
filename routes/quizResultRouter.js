@@ -4,8 +4,10 @@ const quizResultRouter = require('express').Router();
 const studentOnly = require('../middlewares/studentOnly');
 
 quizResultRouter.use(authentication);
-quizResultRouter.use(studentOnly);
 
+quizResultRouter.get('/student/:id', QuizResultController.getAllQuizResultsByStudentId);
+
+quizResultRouter.use(studentOnly);
 quizResultRouter.get('/', QuizResultController.getAllQuizResults);
 quizResultRouter.post('/', QuizResultController.createQuizResult);
 quizResultRouter.get('/:id', QuizResultController.getQuizResult);

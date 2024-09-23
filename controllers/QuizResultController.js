@@ -15,6 +15,21 @@ class QuizResultController {
     }
   }
 
+  static async getAllQuizResultsByStudentId(req, res, next) {
+    try {
+      const { id } = req.params;
+      console.log(id);
+      const quizResults = await QuizResult.findAll({ where: { StudentId: id } });
+      const scoreSum = quizResults.reduce((acc, curr) => +acc + +curr.score, 0);
+      const scoreAverage = scoreSum / quizResults.length;
+      const formattedScoreAverage = scoreAverage % 1 === 0 ? scoreAverage : scoreAverage.toFixed(1);
+      res.json({ data: quizResults, summary: { totalScore: scoreSum, scoreAverage: formattedScoreAverage } });
+    } catch (err) {
+      console.log('----- controllers/QuizResultController.js (getAllQuizResults) -----\n', err);
+      next(err);
+    }
+  }
+
   static async createQuizResult(req, res, next) {
     try {
       const { id } = req.user;
