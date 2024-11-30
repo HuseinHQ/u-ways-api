@@ -2,8 +2,8 @@ const { verifyToken, createAccessToken, createRefreshToken } = require('../helpe
 
 function authentication(req, res, next) {
   try {
-    const access_token = req.headers[process.env.NODE_ENV === 'development' ? 'access-token' : 'x-access-token'];
-    const refresh_token = req.headers[process.env.NODE_ENV === 'development' ? 'refresh-token' : 'x-refresh-token'];
+    const access_token = req.headers['access-token'];
+    const refresh_token = req.headers['refresh-token'];
     let payload;
 
     try {
